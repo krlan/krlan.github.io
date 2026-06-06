@@ -46,7 +46,7 @@
   color: #ffffff !important;
 }
 
-/* 2. Theme: Anthropic (Warm Cream Serif) */
+/* 2. Theme: Anthropic (Cream Sand) */
 .theme-anthropic {
   --bg: #fbfaf7;
   --surface: #f7f3eb;
@@ -66,8 +66,7 @@
 .theme-anthropic .section-title {
   font-family: 'Playfair Display', serif !important;
   text-transform: none !important;
-  font-size: 1.2rem !important;
-  letter-spacing: normal !important;
+  font-size: 1.25rem !important;
   font-weight: 700 !important;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 0.25rem;
@@ -76,35 +75,35 @@
 
 .theme-anthropic .experience-entry h3 {
   font-family: 'Playfair Display', serif !important;
-  font-size: 1.05rem !important;
+  font-size: 1.1rem !important;
   color: var(--text) !important;
 }
 
-/* 3. Theme: OpenAI (Futuristic Minimalist Dark) */
+/* 3. Theme: OpenAI (Premium Dark Homepage) */
 .theme-openai {
-  --bg: #0d0d0e;
-  --surface: #171718;
-  --border: #2e2e30;
-  --text: #ececf1;
-  --text-muted: #9b9ba6;
-  --accent: #10a37f;
-  --accent-dim: #0e8a6c;
+  --bg: #000000;
+  --surface: #101011;
+  --border: #1f1f21;
+  --text: #ffffff;
+  --text-muted: #8e8e93;
+  --accent: #ffffff;
+  --accent-dim: #d1d1d6;
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Inter', sans-serif;
 }
 
 .theme-openai body {
   background-color: var(--bg);
-  background-image: radial-gradient(circle at 50% 50%, rgba(16, 163, 127, 0.05) 0%, transparent 80%);
+  background-image: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
 }
 
 .theme-openai .section-title {
   font-family: 'Inter', sans-serif !important;
   text-transform: uppercase !important;
   font-size: 0.75rem !important;
-  letter-spacing: 0.1em !important;
-  font-weight: 800 !important;
-  color: var(--accent) !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.5rem;
 }
@@ -113,30 +112,38 @@
   color: #ffffff !important;
 }
 
-/* 4. Theme: Cursor */
+/* 4. Theme: Cursor (Glow Space) */
 .theme-cursor {
-  --bg: #0b0d11;
-  --surface: #121316;
-  --border: #212328;
+  --bg: #05070a;
+  --surface: #0a0e14;
+  --border: #1a202c;
   --text: #e2e8f0;
   --text-muted: #64748b;
-  --accent: #38bdf8;
+  --accent: #38bdf8; /* Cyan */
   --accent-dim: #0284c7;
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'JetBrains Mono', monospace;
+  --font-display: 'Inter', sans-serif;
 }
 
 .theme-cursor body {
   background-color: var(--bg);
+  background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.04) 0%, transparent 50%),
+                    radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.03) 0%, transparent 50%);
 }
 
-/* 5. Theme: Zed */
+.theme-cursor .section-title {
+  font-family: 'Inter', sans-serif !important;
+  color: #38bdf8 !important;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+/* 5. Theme: Zed (Slate marketing page layout) */
 .theme-zed {
-  --bg: #181b20;
-  --surface: #1f2329;
-  --border: #2b303c;
-  --text: #abb2bf;
-  --text-muted: #5c6370;
+  --bg: #0e1013;
+  --surface: #15181e;
+  --border: #21252e;
+  --text: #c5cdd8;
+  --text-muted: #6e7987;
   --accent: #e5c07b;
   --accent-dim: #c19c50;
   --font-sans: 'Inter', sans-serif;
@@ -144,6 +151,33 @@
 }
 
 .theme-zed body {
+  background-color: var(--bg);
+}
+
+.theme-zed .section-title {
+  font-family: 'JetBrains Mono', monospace !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* 6. Theme: Developer IDE */
+.theme-developer-ide {
+  --bg: #0d0e12;
+  --surface: #151821;
+  --border: #222735;
+  --text: #cbd5e1;
+  --text-muted: #64748b;
+  --accent: #6366f1; /* Indigo */
+  --accent-dim: #4338ca;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'JetBrains Mono', monospace;
+}
+
+.theme-developer-ide body {
   background-color: var(--bg);
 }
 
