@@ -106,9 +106,13 @@ function App() {
 
   const scrollToIDESection = (file: 'Header.tsx' | 'Summary.md' | 'Experience.tsx' | 'Skills.ts' | 'Education.tsx') => {
     setActiveFile(file);
-    const element = document.getElementById(`ide-sec-${file}`);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const container = document.getElementById('ide-scroll-container');
+    const target = document.getElementById(`ide-sec-${file}`);
+    if (container && target) {
+      const containerRect = container.getBoundingClientRect();
+      const targetRect = target.getBoundingClientRect();
+      const relativeTop = targetRect.top - containerRect.top + container.scrollTop;
+      container.scrollTo({ top: relativeTop - 20, behavior: 'smooth' });
     }
   };
 
@@ -532,7 +536,7 @@ function App() {
   const renderDeveloperIDE = () => (
     <div className="max-w-[1250px] mx-auto py-6 px-4 md:px-6 font-mono text-slate-300 select-text">
       {/* Mock Editor Workspace */}
-      <div className="bg-[#0b0e14] border border-[#222735] rounded-xl shadow-2xl overflow-hidden flex flex-col min-h-[720px] max-h-[85vh]">
+      <div className="bg-[#0b0e14] border border-[#222735] rounded-xl shadow-2xl overflow-hidden flex flex-col h-[calc(100vh-140px)] md:h-[720px] max-h-[85vh]">
         {/* IDE Titlebar */}
         <div className="bg-[#0e111a] border-b border-[#222735] px-4 py-2.5 flex items-center justify-between select-none">
           <div className="flex items-center gap-1.5">
@@ -631,7 +635,7 @@ function App() {
             </div>
 
             {/* Vertical Scroll CV Pane (The whole CV is visible at once) */}
-            <div className="flex-1 overflow-y-auto p-8 space-y-12 scroll-smooth select-text bg-[#090a0d]">
+            <div id="ide-scroll-container" className="flex-1 overflow-y-auto p-8 space-y-12 scroll-smooth select-text bg-[#090a0d]">
               {/* Section 1: Header */}
               <div 
                 id="ide-sec-Header.tsx" 
