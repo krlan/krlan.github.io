@@ -4,9 +4,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import { AnimatePresence, motion } from 'framer-motion';
-import { 
-  Layers, ChevronDown, Folder, File, Code, GitBranch, Sparkles, Send, MessageSquare, Terminal
-} from 'lucide-react';
+import { Layers } from 'lucide-react';
 
 const email = "i@sigma.club";
 const twitterUrl = "https://x.com/trefeelove";
@@ -91,55 +89,12 @@ const educationData = [
 ];
 
 function App() {
-  const [theme, setTheme] = useState<'original' | 'anthropic' | 'openai' | 'cursor' | 'zed' | 'developer-ide' | 'ats-classic'>('original');
+  const [theme, setTheme] = useState<'original' | 'anthropic' | 'openai' | 'ats-classic'>('original');
   const [showTweaks, setShowTweaks] = useState(true);
-  
-  // Tab/scroll focus state for Developer IDE layout
-  const [activeFile, setActiveFile] = useState<'Header.tsx' | 'Skills.ts' | 'Experience.tsx' | 'Education.tsx'>('Skills.ts');
-
-  // Interactive Cursor Chat State
-  const [chatMessages, setChatMessages] = useState([
-    { sender: 'user', text: 'What are Igor\'s core competencies?' },
-    { sender: 'ai', text: 'Igor specializes in building 0→1 products using TypeScript, React, and Solidity/Solana, with a strong focus on custom AI automation agents (voice AI, workflow automation).' }
-  ]);
-  const [chatInput, setChatInput] = useState('');
 
   useEffect(() => {
     document.body.className = `theme-${theme}`;
   }, [theme]);
-
-  const scrollToIDESection = (file: 'Header.tsx' | 'Skills.ts' | 'Experience.tsx' | 'Education.tsx') => {
-    setActiveFile(file);
-    const container = document.getElementById('ide-scroll-container');
-    const target = document.getElementById(`ide-sec-${file}`);
-    if (container && target) {
-      const containerRect = container.getBoundingClientRect();
-      const targetRect = target.getBoundingClientRect();
-      const relativeTop = targetRect.top - containerRect.top + container.scrollTop;
-      container.scrollTo({ top: relativeTop - 20, behavior: 'smooth' });
-    }
-  };
-
-  const handleChatSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!chatInput.trim()) return;
-    const userMsg = chatInput;
-    setChatMessages(prev => [...prev, { sender: 'user', text: userMsg }]);
-    setChatInput('');
-
-    setTimeout(() => {
-      let reply = "Igor specializes in AI automation pipeline development and Web3 on-chain frameworks. Send him an email at i@sigma.club!";
-      const query = userMsg.toLowerCase();
-      if (query.includes('email') || query.includes('contact')) {
-        reply = "You can email Igor directly at i@sigma.club or connect with him on Twitter at @trefeelove.";
-      } else if (query.includes('solana') || query.includes('leverbrain') || query.includes('rust')) {
-        reply = "Igor pivoted LeverBrain to a Solana AI Skill Marketplace, implementing SPL Token USDC licensing Rust contracts and Convex caches.";
-      } else if (query.includes('crypto') || query.includes('defi')) {
-        reply = "Igor has 6+ years in DeFi protocol analysis, smart contract coding (Solidity), and designing yield farms/vault structures.";
-      }
-      setChatMessages(prev => [...prev, { sender: 'ai', text: reply }]);
-    }, 600);
-  };
 
   // 1. ORIGINAL LAYOUT
   const renderOriginal = () => (
@@ -250,7 +205,7 @@ function App() {
             Igor Trefilov
           </h1>
           <p className="text-lg text-neutral-400 font-light leading-relaxed max-w-xl">
-            Sleek developer of high-efficiency artificial intelligence automation pipelines and decentralized smart contract networks.
+            Building autonomous AI systems and decentralized blockchain protocols to automate execution at scale.
           </p>
         </div>
         <div className="flex flex-wrap gap-4 text-xs font-mono text-neutral-500">
@@ -331,363 +286,6 @@ function App() {
     </div>
   );
 
-  // 4. CURSOR LAYOUT (Glassy SaaS Gradient Page Style)
-  const renderCursor = () => (
-    <div className="max-w-4xl mx-auto text-slate-200 selection:bg-[#38bdf8]/20 py-16 px-6 lg:px-8">
-      {/* Hero Section */}
-      <header className="text-center mb-16 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-tr from-sky-500/10 to-violet-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/5 text-[10px] font-mono text-sky-400 uppercase tracking-wider mb-6">
-          <Sparkles className="w-3 h-3 text-sky-400" /> Active Build Interface
-        </div>
-        <h1 className="text-5xl lg:text-6xl font-extrabold text-white tracking-tighter mb-4">
-          Igor Trefilov
-        </h1>
-        <p className="text-lg text-slate-400 font-light max-w-xl mx-auto leading-relaxed mb-6">
-          Architecting state-of-the-art AI automation strategies and high-execution on-chain Solana protocols.
-        </p>
-        <div className="flex justify-center gap-6 text-xs font-mono text-slate-500">
-          <a href={`mailto:${email}`} className="hover:text-sky-400 transition-colors">{email}</a>
-          <span>·</span>
-          <a href="https://github.com/krlan" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors">github.com/krlan</a>
-          <span>·</span>
-          <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors">x.com/trefeelove</a>
-          <span>·</span>
-          <a href={webUrl} target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors">sigma.club</a>
-        </div>
-      </header>
-
-      {/* Skills features grid */}
-      <section className="mb-16">
-        <h2 className="text-xs font-mono text-sky-400 uppercase tracking-widest mb-6 border-b border-slate-800 pb-2">
-          // Core Engine Capabilities
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {skillsData.map((cat, idx) => (
-            <div key={idx} className="p-6 rounded-2xl bg-slate-900/40 backdrop-blur border border-slate-800/80">
-              <h4 className="text-xs font-mono font-bold text-sky-400 mb-3 uppercase tracking-wide flex items-center gap-1.5">
-                <Code className="w-3.5 h-3.5" /> {cat.category}
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {cat.skills.map((skill, sIdx) => (
-                  <span key={sIdx} className="px-2 py-1 rounded bg-slate-800/50 border border-slate-700/40 text-[10px] font-mono text-slate-300">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Experience Showcases */}
-      <section className="mb-16">
-        <h2 className="text-xs font-mono text-sky-400 uppercase tracking-widest mb-6 border-b border-slate-800 pb-2">
-          // Product & Protocol Deployments
-        </h2>
-        <div className="flex flex-col gap-6">
-          {experienceData.map((job, idx) => (
-            <div key={idx} className="p-6 rounded-2xl bg-[#0a0e14]/50 border border-slate-800 hover:border-sky-500/25 transition-all duration-300 group">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
-                <h3 className="text-lg font-bold text-white tracking-tight">
-                  {job.title.split(" -- ")[0]} — <span className="text-slate-400 font-light text-sm">{job.title.split(" -- ")[1]}</span>
-                </h3>
-                <span className="text-xs font-mono text-slate-500">{job.period}</span>
-              </div>
-              <ul className="space-y-2 text-xs text-slate-400 leading-relaxed list-none pl-0">
-                {job.responsibilities.map((resp, rIdx) => (
-                  <li key={rIdx} className="pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-sky-500" dangerouslySetInnerHTML={{ __html: resp }} />
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Academic Background (Education) */}
-      <section className="p-6 rounded-2xl bg-slate-900/40 backdrop-blur border border-slate-800/80">
-        <h2 className="text-xs font-mono text-sky-400 uppercase tracking-widest mb-4">
-          // Education Background
-        </h2>
-        {educationData.map((edu, idx) => (
-          <div key={idx} className="flex flex-col gap-1">
-            <div className="flex justify-between items-baseline">
-              <h4 className="text-base font-bold text-white">
-                <strong>{edu.school}</strong>, Saint-Petersburg, Russia -- {edu.degree}
-              </h4>
-              <span className="text-xs font-mono text-slate-500">{edu.period}</span>
-            </div>
-            {edu.description && (
-              <p className="text-xs text-slate-400 leading-relaxed mt-2">{edu.description}</p>
-            )}
-          </div>
-        ))}
-      </section>
-    </div>
-  );
-
-  // 5. ZED LAYOUT (Slate/Charcoal Marketing Grid Page Style)
-  const renderZed = () => (
-    <div className="max-w-4xl mx-auto text-[#abb2bf] selection:bg-[#e5c07b]/20 py-16 px-6 lg:px-8 font-sans">
-      <header className="border-b border-[#21252e] pb-10 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-        <div>
-          <div className="font-mono text-xs text-[#e5c07b] mb-2 font-semibold tracking-wide">
-            ZED.DEV / IGOR_TREFILOV_CV
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-2">
-            Igor Trefilov
-          </h1>
-          <p className="text-sm font-mono text-[#5c6370]">
-            Fast-execution AI automation & custom blockchain engineering.
-          </p>
-        </div>
-        <div className="flex flex-col gap-1 text-xs font-mono text-[#5c6370] text-left md:text-right">
-          <a href={`mailto:${email}`} className="hover:text-white transition-colors">{email}</a>
-          <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">x.com/trefeelove</a>
-          <a href={webUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">sigma.club</a>
-        </div>
-      </header>
-
-      {/* Technical skills */}
-      <section className="mb-12 border-b border-[#21252e] pb-10">
-        <h2 className="text-xs font-mono uppercase text-[#e5c07b] tracking-wider mb-6">
-          // Technical Capabilities
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {skillsData.map((cat, idx) => (
-            <div key={idx} className="bg-[#15181e] border border-[#21252e] p-5 rounded">
-              <h4 className="text-xs font-mono font-bold text-[#e5c07b] mb-3 uppercase tracking-wide">
-                {cat.category}
-              </h4>
-              <p className="text-xs text-[#abb2bf] leading-relaxed">
-                {cat.skills.join(', ')}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Experience details */}
-      <section className="mb-12 border-b border-[#21252e] pb-10">
-        <h2 className="text-xs font-mono uppercase text-[#e5c07b] tracking-wider mb-6">
-          // Professional Experience
-        </h2>
-        <div className="flex flex-col gap-8">
-          {experienceData.map((job, idx) => (
-            <div key={idx} className="border-l border-[#21252e] pl-4">
-              <div className="flex justify-between items-baseline mb-2">
-                <h3 className="text-base font-bold text-white font-mono">
-                  {job.title.split(" -- ")[0]} — <span className="text-[#e5c07b] font-light text-xs">{job.title.split(" -- ")[1]}</span>
-                </h3>
-                <span className="text-xs font-mono text-[#5c6370]">{job.period}</span>
-              </div>
-              <ul className="space-y-2 text-xs text-[#abb2bf] mt-3 list-disc pl-4">
-                {job.responsibilities.map((resp, rIdx) => (
-                  <li key={rIdx} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: resp }} />
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Education */}
-      <section className="pb-10">
-        <h2 className="text-xs font-mono uppercase text-[#e5c07b] tracking-wider mb-4">
-          // Education
-        </h2>
-        {educationData.map((edu, idx) => (
-          <div key={idx} className="flex flex-col gap-1">
-            <div className="flex justify-between items-baseline">
-              <h4 className="text-base font-bold text-white font-mono">
-                <strong>{edu.school}</strong>, Saint-Petersburg, Russia -- {edu.degree}
-              </h4>
-              <span className="text-xs font-mono text-[#5c6370]">{edu.period}</span>
-            </div>
-            {edu.description && (
-              <p className="text-xs text-[#5c6370] leading-relaxed mt-2">{edu.description}</p>
-            )}
-          </div>
-        ))}
-      </section>
-    </div>
-  );
-
-  // 6. DEVELOPER IDE LAYOUT (Unified Document Scroll Workspace)
-  const renderDeveloperIDE = () => (
-    <div className="max-w-[1250px] mx-auto py-6 px-4 md:px-6 font-mono text-slate-300 select-text">
-      {/* Mock Editor Workspace */}
-      <div className="bg-[#0b0e14] border border-[#222735] rounded-xl shadow-2xl overflow-hidden flex flex-col h-[calc(100vh-140px)] md:h-[720px] max-h-[85vh]">
-        {/* IDE Titlebar */}
-        <div className="bg-[#0e111a] border-b border-[#222735] px-4 py-2.5 flex items-center justify-between select-none">
-          <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-            <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-            <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
-          </div>
-          <div className="text-xs text-slate-400 font-mono flex items-center gap-1.5">
-            <Terminal className="w-3.5 h-3.5 text-indigo-400" /> krlan-workspace - Igor_Trefilov_CV
-          </div>
-          <div className="w-10" />
-        </div>
-
-        {/* Workspace Layout */}
-        <div className="flex flex-1 flex-col md:flex-row min-h-0">
-          
-          {/* File Explorer Tree (Left) */}
-          <div className="w-full md:w-[200px] bg-[#07090f] border-r border-[#222735] p-3 flex flex-col gap-4 select-none">
-            <div>
-              <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 px-1 flex items-center gap-1">
-                <ChevronDown className="w-3.5 h-3.5" /> Workspace Outline
-              </div>
-              <div className="flex flex-col gap-1 text-xs">
-                <div className="flex items-center gap-1.5 px-2 py-1 text-slate-400">
-                  <Folder className="w-3.5 h-3.5 text-indigo-400" /> <span className="font-semibold">src</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-4 py-1 text-slate-400">
-                  <Folder className="w-3.5 h-3.5 text-indigo-400" /> <span className="font-semibold">components</span>
-                </div>
-                
-                {/* File list buttons */}
-                {(['Header.tsx', 'Skills.ts', 'Experience.tsx', 'Education.tsx'] as const).map(file => (
-                  <button
-                    key={file}
-                    onClick={() => scrollToIDESection(file)}
-                    className={`flex items-center gap-2 pl-8 pr-2 py-1 text-left rounded-md transition-colors ${
-                      activeFile === file ? 'bg-[#1b1f2b] text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-[#12151f]'
-                    }`}
-                  >
-                    <File className={`w-3.5 h-3.5 ${file.endsWith('tsx') || file.endsWith('ts') ? 'text-indigo-400' : 'text-orange-400'}`} />
-                    <span className="truncate">{file}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-            
-            {/* Interactive Chat Panel nested inside sidebar */}
-            <div className="border-t border-[#222735] pt-4 mt-auto">
-              <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-2 px-1 flex items-center gap-1.5">
-                <MessageSquare className="w-3 h-3 text-indigo-400" /> Chat Copilot
-              </div>
-              <div className="bg-[#0e111a] border border-[#222735] p-2 rounded-md max-h-[140px] overflow-y-auto text-[10px] leading-relaxed text-slate-400 space-y-2">
-                {chatMessages.map((msg, i) => (
-                  <div key={i} className={msg.sender === 'user' ? 'text-indigo-400' : 'text-slate-300'}>
-                    <strong className="uppercase text-[8px] tracking-wide block text-slate-500">{msg.sender === 'user' ? 'User' : 'AI'}</strong>
-                    {msg.text}
-                  </div>
-                ))}
-              </div>
-              <form onSubmit={handleChatSubmit} className="mt-2 flex gap-1">
-                <input
-                  type="text"
-                  value={chatInput}
-                  onChange={e => setChatInput(e.target.value)}
-                  placeholder="Ask copilot..."
-                  className="w-full bg-[#12151f] border border-[#222735] rounded px-2 py-1 text-[10px] focus:outline-none focus:border-indigo-500 placeholder-slate-600 text-slate-200"
-                />
-                <button type="submit" className="bg-indigo-600 hover:bg-indigo-700 text-white rounded p-1 text-[10px]">
-                  <Send className="w-3 h-3" />
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* Scrolling Editor Workspace Panel (Middle) */}
-          <div className="flex-1 flex flex-col min-w-0 bg-[#0d0e12]">
-            {/* IDE Tabs list */}
-            <div className="bg-[#0e111a] border-b border-[#222735] flex overflow-x-auto select-none">
-              {(['Header.tsx', 'Skills.ts', 'Experience.tsx', 'Education.tsx'] as const).map(file => (
-                <button
-                  key={file}
-                  onClick={() => scrollToIDESection(file)}
-                  className={`flex items-center gap-2 px-4 py-2 text-xs border-r border-[#222735] transition-colors ${
-                    activeFile === file ? 'bg-[#0d0e12] text-indigo-400 font-semibold border-t-2 border-indigo-500' : 'bg-[#0e111a] text-slate-500 hover:text-slate-300'
-                  }`}
-                >
-                  <Code className="w-3.5 h-3.5" />
-                  <span>{file}</span>
-                </button>
-              ))}
-            </div>
-
-            {/* Path indicator */}
-            <div className="px-4 py-1 text-[10px] text-slate-500 border-b border-[#131722] font-mono select-none">
-              src &gt; components &gt; {activeFile}
-            </div>
-
-            {/* Vertical Scroll CV Pane (The whole CV is visible at once) */}
-            <div id="ide-scroll-container" className="flex-1 overflow-y-auto p-8 space-y-12 scroll-smooth select-text bg-[#090a0d]">
-              {/* Section 1: Header */}
-              <div 
-                id="ide-sec-Header.tsx" 
-                className={`transition-all duration-300 ${
-                  activeFile === 'Header.tsx' 
-                    ? 'opacity-100 pl-4 border-l-2 border-indigo-500' 
-                    : 'opacity-35 pl-4 border-l border-transparent'
-                }`}
-              >
-                <div className="text-[10px] text-slate-600 mb-2 font-mono select-none">// Component: Header.tsx</div>
-                <Header />
-              </div>
-
-              {/* Section 2: Skills */}
-              <div 
-                id="ide-sec-Skills.ts" 
-                className={`transition-all duration-300 ${
-                  activeFile === 'Skills.ts' 
-                    ? 'opacity-100 pl-4 border-l-2 border-indigo-500' 
-                    : 'opacity-35 pl-4 border-l border-transparent'
-                }`}
-              >
-                <div className="text-[10px] text-slate-600 mb-2 font-mono select-none">// Dataset: Skills.ts</div>
-                <Skills />
-              </div>
-
-              {/* Section 3: Experience */}
-              <div 
-                id="ide-sec-Experience.tsx" 
-                className={`transition-all duration-300 ${
-                  activeFile === 'Experience.tsx' 
-                    ? 'opacity-100 pl-4 border-l-2 border-indigo-500' 
-                    : 'opacity-35 pl-4 border-l border-transparent'
-                }`}
-              >
-                <div className="text-[10px] text-slate-600 mb-2 font-mono select-none">// Component: Experience.tsx</div>
-                <Experience />
-              </div>
-
-              {/* Section 4: Education */}
-              <div 
-                id="ide-sec-Education.tsx" 
-                className={`transition-all duration-300 ${
-                  activeFile === 'Education.tsx' 
-                    ? 'opacity-100 pl-4 border-l-2 border-indigo-500' 
-                    : 'opacity-35 pl-4 border-l border-transparent'
-                }`}
-              >
-                <div className="text-[10px] text-slate-600 mb-2 font-mono select-none">// Component: Education.tsx</div>
-                <Education />
-              </div>
-            </div>
-
-            {/* Bottom Status bar */}
-            <div className="bg-[#0e111a] border-t border-[#222735] px-3 py-1.5 flex items-center justify-between text-[10px] text-slate-500 select-none">
-              <div className="flex items-center gap-3">
-                <span className="flex items-center gap-1 text-slate-300"><GitBranch className="w-3 h-3 text-indigo-400" /> master</span>
-                <span>UTF-8</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span>TypeScript JSX</span>
-                <span>Compiled successfully</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
   // 7. ATS CLASSIC LAYOUT (Standard Printable Grayscale Paper)
   const renderATSClassic = () => (
     <div className="max-w-2xl mx-auto flex flex-col gap-6 py-12 px-6">
@@ -715,9 +313,6 @@ function App() {
                 { id: 'original', label: 'Original CV', tagline: 'Classic Green & Dark' },
                 { id: 'anthropic', label: 'Anthropic Site', tagline: 'Warm Serif Marketing' },
                 { id: 'openai', label: 'OpenAI Site', tagline: 'Minimalist Black & White' },
-                { id: 'cursor', label: 'Cursor Site', tagline: 'Glowing Cosmic SaaS' },
-                { id: 'zed', label: 'Zed Site', tagline: 'Refined Slate Marketing' },
-                { id: 'developer-ide', label: 'Developer IDE', tagline: 'Workspace Tab Scroll' },
                 { id: 'ats-classic', label: 'ATS Classic', tagline: 'Printable Grayscale Paper' }
               ] as const
             ).map((option) => (
@@ -756,9 +351,6 @@ function App() {
           {theme === 'original' && renderOriginal()}
           {theme === 'anthropic' && renderAnthropic()}
           {theme === 'openai' && renderOpenAI()}
-          {theme === 'cursor' && renderCursor()}
-          {theme === 'zed' && renderZed()}
-          {theme === 'developer-ide' && renderDeveloperIDE()}
           {theme === 'ats-classic' && renderATSClassic()}
         </motion.div>
       </AnimatePresence>

@@ -112,74 +112,7 @@
   color: #ffffff !important;
 }
 
-/* 4. Theme: Cursor (Glow Space) */
-.theme-cursor {
-  --bg: #05070a;
-  --surface: #0a0e14;
-  --border: #1a202c;
-  --text: #e2e8f0;
-  --text-muted: #64748b;
-  --accent: #38bdf8; /* Cyan */
-  --accent-dim: #0284c7;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Inter', sans-serif;
-}
 
-.theme-cursor body {
-  background-color: var(--bg);
-  background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.04) 0%, transparent 50%),
-                    radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.03) 0%, transparent 50%);
-}
-
-.theme-cursor .section-title {
-  font-family: 'Inter', sans-serif !important;
-  color: #38bdf8 !important;
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
-}
-
-/* 5. Theme: Zed (Slate marketing page layout) */
-.theme-zed {
-  --bg: #0e1013;
-  --surface: #15181e;
-  --border: #21252e;
-  --text: #c5cdd8;
-  --text-muted: #6e7987;
-  --accent: #e5c07b;
-  --accent-dim: #c19c50;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'JetBrains Mono', monospace;
-}
-
-.theme-zed body {
-  background-color: var(--bg);
-}
-
-.theme-zed .section-title {
-  font-family: 'JetBrains Mono', monospace !important;
-  text-transform: uppercase !important;
-  font-size: 0.75rem !important;
-  color: var(--text) !important;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem;
-  letter-spacing: 0.05em;
-}
-
-/* 6. Theme: Developer IDE */
-.theme-developer-ide {
-  --bg: #0d0e12;
-  --surface: #151821;
-  --border: #222735;
-  --text: #cbd5e1;
-  --text-muted: #64748b;
-  --accent: #6366f1; /* Indigo */
-  --accent-dim: #4338ca;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'JetBrains Mono', monospace;
-}
-
-.theme-developer-ide body {
-  background-color: var(--bg);
-}
 
 /* 7. Theme: ATS Classic (Standard Printable Grayscale Paper) */
 .theme-ats-classic {
