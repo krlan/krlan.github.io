@@ -9,7 +9,7 @@ const generatePDF = async () => {
   await page.setViewport({ width: 1200, height: 1600 });
   
   console.log('Loading CV...');
-  await page.goto('https://krlan.github.io/', { 
+  await page.goto('http://localhost:5173/?theme=ats-classic', { 
     waitUntil: 'networkidle0',
     timeout: 30000 
   });
