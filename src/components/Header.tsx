@@ -33,7 +33,7 @@ const Header: React.FC = () => {
         <span className="text-[var(--border)]">·</span>
         <a href="https://x.com/trefeelove" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-dim)] transition-colors">x.com/trefeelove</a>
         <span className="text-[var(--border)]">·</span>
-        <a href="https://sigma.club" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-dim)] transition-colors">sigma.club</a>
+        <a href="https://leverbrain.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-dim)] transition-colors">leverbrain.com</a>
       </div>
     </motion.header>
   );

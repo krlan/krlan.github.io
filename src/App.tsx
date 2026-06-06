@@ -8,7 +8,7 @@ import { Layers } from 'lucide-react';
 
 const email = "i@sigma.club";
 const twitterUrl = "https://x.com/trefeelove";
-const webUrl = "https://sigma.club";
+const webUrl = "https://leverbrain.com";
 
 const summaryText = "Self-taught engineer (TypeScript, React, Solidity, Python) who builds products from zero. 6+ years in crypto/DeFi, now focused on AI automation — voice AI agents, intelligent email systems, workflow orchestration. Fast execution, end-to-end ownership, concept to production in weeks.";
 
@@ -125,7 +125,7 @@ function App() {
           <span>·</span>
           <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#e05c3e] transition-colors underline underline-offset-4">x.com/trefeelove</a>
           <span>·</span>
-          <a href={webUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#e05c3e] transition-colors underline underline-offset-4">sigma.club</a>
+          <a href={webUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#e05c3e] transition-colors underline underline-offset-4">leverbrain.com</a>
         </div>
       </header>
 
@@ -215,7 +215,7 @@ function App() {
           <span>/</span>
           <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">x.com/trefeelove</a>
           <span>/</span>
-          <a href={webUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">sigma.club</a>
+          <a href={webUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">leverbrain.com</a>
         </div>
       </header>
 
