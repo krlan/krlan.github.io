@@ -113,50 +113,38 @@
   color: #ffffff !important;
 }
 
-/* 4. Theme: Zed / Cursor (Developer IDE Dark) */
-.theme-zed-cursor {
+/* 4. Theme: Cursor */
+.theme-cursor {
   --bg: #0b0d11;
-  --surface: #141820;
-  --border: #21262e;
-  --text: #c5cdd8;
-  --text-muted: #6e7987;
-  --accent: #51afef;
-  --accent-dim: #3584c3;
+  --surface: #121316;
+  --border: #212328;
+  --text: #e2e8f0;
+  --text-muted: #64748b;
+  --accent: #38bdf8;
+  --accent-dim: #0284c7;
   --font-sans: 'Inter', sans-serif;
   --font-display: 'JetBrains Mono', monospace;
 }
 
-.theme-zed-cursor body {
+.theme-cursor body {
   background-color: var(--bg);
-  background-image: 
-    linear-gradient(rgba(81, 175, 239, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(81, 175, 239, 0.015) 1px, transparent 1px);
-  background-size: 20px 20px;
 }
 
-.theme-zed-cursor .section-title {
-  font-family: 'JetBrains Mono', monospace !important;
-  font-size: 0.8rem !important;
-  color: var(--accent) !important;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  display: inline-block;
-  margin-top: 1.75rem !important;
-  margin-bottom: 1rem !important;
+/* 5. Theme: Zed */
+.theme-zed {
+  --bg: #181b20;
+  --surface: #1f2329;
+  --border: #2b303c;
+  --text: #abb2bf;
+  --text-muted: #5c6370;
+  --accent: #e5c07b;
+  --accent-dim: #c19c50;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'JetBrains Mono', monospace;
 }
 
-.theme-zed-cursor .experience-entry {
-  border-left: 2px solid var(--border);
-  padding-left: 1rem;
-  border-bottom: none;
-  margin-bottom: 1.5rem;
-}
-
-.theme-zed-cursor .experience-entry h3 {
-  font-family: 'JetBrains Mono', monospace !important;
-  color: #ffffff !important;
+.theme-zed body {
+  background-color: var(--bg);
 }
 
 body {
