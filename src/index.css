@@ -16,138 +16,167 @@
   --font-display: 'Inter', sans-serif;
 }
 
-/* Theme: Classic Dark */
-.theme-classic {
-  --bg: #0c0c0c;
-  --surface: #141414;
-  --border: #1f1f1f;
-  --text: #e5e5e5;
-  --text-muted: #737373;
-  --accent: #22c55e;
-  --accent-dim: #166534;
+/* 1. Theme: Linear (SaaS Dashboard) */
+.theme-linear {
+  --bg: #08090f;
+  --surface: #0f1016;
+  --border: #1a1c27;
+  --text: #f3f4f6;
+  --text-muted: #858999;
+  --accent: #5e6ad2;
+  --accent-dim: #3e4480;
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Inter', sans-serif;
 }
 
-/* Theme: Cyberpunk Terminal */
-.theme-terminal {
-  --bg: #050505;
-  --surface: #0a0a0a;
-  --border: #00ff6633;
-  --text: #00ff66;
-  --text-muted: #007722;
-  --accent: #00ff66;
-  --accent-dim: #003311;
-  --font-sans: 'JetBrains Mono', monospace;
-  --font-display: 'JetBrains Mono', monospace;
+.theme-linear body {
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(94, 106, 210, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(94, 106, 210, 0.03) 0px, transparent 50%);
 }
 
-.theme-terminal * {
-  font-family: 'JetBrains Mono', monospace !important;
+.theme-linear .linear-panel {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
-.theme-terminal a {
-  text-shadow: 0 0 4px var(--accent);
+.theme-linear kbd {
+  background: #1d1f2d;
+  border: 1px solid #2d3047;
+  box-shadow: 0 2px 0 #000;
+  color: #a5a9c0;
 }
 
-.theme-terminal ::selection {
-  background: var(--accent);
-  color: var(--bg);
-}
-
-/* Theme: Glassmorphic Ambient Glow */
-.theme-glass {
-  --bg: #030712;
-  --surface: rgba(17, 24, 39, 0.45);
-  --border: rgba(255, 255, 255, 0.08);
-  --text: #f3f4f6;
-  --text-muted: #9ca3af;
-  --accent: #38bdf8;
-  --accent-dim: #0284c7;
+/* 2. Theme: Bento.me (Personal Grid) */
+.theme-bento {
+  --bg: #05060b;
+  --surface: #0c0e17;
+  --border: rgba(255, 255, 255, 0.06);
+  --text: #f1f5f9;
+  --text-muted: #64748b;
+  --accent: #ec4899;
+  --accent-dim: #9d174d;
   --font-sans: 'Space Grotesk', sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
 }
 
-.theme-glass .glass-panel {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+.theme-bento body {
+  background-color: var(--bg);
 }
 
-/* Theme: Nordic Editorial */
+.theme-bento .bento-card {
+  background: rgba(12, 14, 23, 0.7);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-bento .bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(236, 72, 153, 0.3);
+  box-shadow: 0 20px 40px -10px rgba(236, 72, 153, 0.15);
+}
+
+/* 3. Theme: Cyber-Brutalist (Replicate/Family) */
+.theme-brutalist {
+  --bg: #fef08a; /* Yellow paper */
+  --surface: #ffffff;
+  --border: #000000;
+  --text: #000000;
+  --text-muted: #374151;
+  --accent: #c084fc;
+  --accent-dim: #a855f7;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+}
+
+.theme-brutalist body {
+  background-color: var(--bg);
+  background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.theme-brutalist .brutalist-panel {
+  border: 4px solid #000000 !important;
+  box-shadow: 8px 8px 0px #000000 !important;
+  border-radius: 8px !important;
+  background: #ffffff;
+  transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.theme-brutalist .brutalist-panel:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 11px 11px 0px #000000 !important;
+}
+
+.theme-brutalist .brutalist-badge {
+  border: 2px solid #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+  border-radius: 4px !important;
+  background: var(--bg);
+}
+
+.theme-brutalist a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  font-weight: bold;
+}
+
+/* 4. Theme: Calm Editorial (Reflect/Amie) */
 .theme-editorial {
-  --bg: #fcfbf7;
-  --surface: #f7f6f0;
-  --border: #e5e3d7;
+  --bg: #f9f8f4;
+  --surface: #ffffff;
+  --border: #e7e5e4;
   --text: #1c1917;
-  --text-muted: #78716c;
-  --accent: #c2410c;
-  --accent-dim: #ea580c;
+  --text-muted: #878580;
+  --accent: #44403c;
+  --accent-dim: #78716c;
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Playfair Display', serif;
 }
 
 .theme-editorial body {
   background-color: var(--bg);
+  background-image: 
+    linear-gradient(rgba(28, 25, 23, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 25, 23, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-/* Interactive Card Deck Styling */
-.theme-deck {
-  --bg: #0a0b10;
-  --surface: #12131a;
-  --border: #1d1e26;
-  --text: #e2e8f0;
-  --text-muted: #64748b;
-  --accent: #8b5cf6;
-  --accent-dim: #6d28d9;
-  --font-sans: 'Space Grotesk', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+.theme-editorial .editorial-card {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+}
+
+.theme-editorial .section-title {
+  font-family: 'Playfair Display', serif !important;
+  font-style: italic;
+  font-size: 1.125rem !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem !important;
 }
 
 body {
   font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4, .section-title {
+h1, h2, h3, h4 {
   font-family: var(--font-display);
 }
 
-/* Scanlines overlay for terminal */
-.terminal-scanlines {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    rgba(18, 16, 16, 0) 50%, 
-    rgba(0, 0, 0, 0.15) 50%
-  );
-  background-size: 100% 4px;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.terminal-scanlines::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle,
-    transparent 50%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-  pointer-events: none;
-}
-
-/* Animated background blobs for glassmorphism */
+/* Floating background blobs for glassmorphism/bento */
 @keyframes float-slow {
   0%, 100% { transform: translate(0px, 0px) scale(1); }
   33% { transform: translate(30px, -50px) scale(1.1); }
