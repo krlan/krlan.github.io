@@ -121,11 +121,26 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSidebarSection, setActiveSidebarSection] = useState<'overview' | 'experience' | 'skills' | 'education'>('overview');
   const [expandedBrutalistJob, setExpandedBrutalistJob] = useState<number | null>(0);
+  const [showTweaks, setShowTweaks] = useState(true);
 
   useEffect(() => {
     // Add theme class to body for global variable transitions
     document.body.className = `theme-${theme}`;
   }, [theme]);
+
+  useEffect(() => {
+    // Listen for edit mode messages from host to toggle Tweaks
+    const handleMessage = (e: MessageEvent) => {
+      if (e.data?.type === '__activate_edit_mode') {
+        setShowTweaks(true);
+      } else if (e.data?.type === '__deactivate_edit_mode') {
+        setShowTweaks(false);
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
 
   // Keyboard shortcut listeners for Linear theme
   useEffect(() => {
