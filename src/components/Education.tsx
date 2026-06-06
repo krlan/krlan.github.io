@@ -15,6 +15,9 @@ const Education: React.FC = () => {
           <strong>Higher School of Economics</strong>, Saint-Petersburg, Russia -- Bachelor of Science in Economics
         </h3>
         <p className="details mt-0.5">Sep 2012 -- Jun 2016</p>
+        <p className="text-xs text-[var(--text-muted)] mt-2 leading-relaxed">
+          Focused on quantitative analysis and financial modeling. Deepened in web development and software engineering during studies, pursuing building independent products from zero.
+        </p>
       </motion.div>
     </Section>
   );
