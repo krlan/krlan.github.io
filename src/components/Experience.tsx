@@ -5,8 +5,8 @@ import ExperienceEntry from './ExperienceEntry';
 
 const experienceData = [
   {
-    title: "Founder & CEO | <a href='https://leverbrain.com' target='_blank' rel='noopener noreferrer'>LeverBrain</a> — Solana Skill Marketplace",
-    period: "2024 - Present | Remote",
+    title: "<strong><a href='https://leverbrain.com' target='_blank' rel='noopener noreferrer'>LeverBrain</a></strong>, Remote -- Founder & CEO",
+    period: "Jan 2024 -- Present",
     responsibilities: [
       "Pivoted Leverbrain into a decentralized high-fidelity marketplace for AI agent skills, strategies, and deployment blueprints.",
       "<strong>Solana Smart Contracts (Anchor/Rust):</strong> Designed and deployed the on-chain licensing registry and purchase access ledger, settling microtransactions in USDC using the SPL Token program.",
@@ -17,8 +17,8 @@ const experienceData = [
     ]
   },
   {
-    title: "Founder & Product Lead | <a href='https://sigma.club/' target='_blank' rel='noopener noreferrer'>Sigma Club</a> — Learning Platform",
-    period: "2023 - Present | Remote",
+    title: "<strong><a href='https://sigma.club/' target='_blank' rel='noopener noreferrer'>Sigma Club</a></strong>, Remote -- Founder & Product Lead",
+    period: "Jun 2023 -- Present",
     responsibilities: [
       "Building an AI-powered collaborative learning platform designed to foster personalized growth paths within communities.",
       "Architected 3 core AI features: personalized learning paths, interest-based matching, and knowledge gap analysis.",
@@ -27,8 +27,8 @@ const experienceData = [
     ]
   },
   {
-    title: "Blockchain Specialist & DeFi Strategist",
-    period: "2019 - Present | Remote",
+    title: "<strong>DeFi/Web3 Consulting</strong>, Remote -- Blockchain Specialist & DeFi Strategist",
+    period: "Jan 2019 -- Present",
     responsibilities: [
       "<strong>6+ years</strong> deep in crypto: DeFi protocol analysis, yield strategies, NFT launches, smart contract development.",
       "Generated <strong>$50k+ profit in one week</strong> launching NFT collection on FTX marketplace day-one.",
@@ -38,8 +38,8 @@ const experienceData = [
     ]
   },
   {
-    title: "Founder | E-commerce Business — Digital Products",
-    period: "2017 - 2021 | Remote",
+    title: "<strong>E-commerce Business</strong>, Remote -- Founder",
+    period: "Jan 2017 -- Dec 2021",
     responsibilities: [
       "Built and operated profitable e-commerce store selling digital products to Amazon sellers.",
       "Managed end-to-end: product creation, marketing funnels, customer support, and operations.",
@@ -47,8 +47,8 @@ const experienceData = [
     ]
   },
   {
-    title: "Product Manager | FinTech Startup — Loan Comparison Platform",
-    period: "2016 - 2017 | Remote (California-based team)",
+    title: "<strong>FinTech Platform</strong>, Remote -- Product Manager",
+    period: "Mar 2016 -- Nov 2017",
     responsibilities: [
       "Contributed development and product management to a loan comparison platform serving US consumers.",
       "Coordinated fully remote team across multiple timezones; managed sprint planning and stakeholder communication.",

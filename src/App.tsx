@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import Summary from './components/Summary';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills';
@@ -17,8 +16,8 @@ const summaryText = "Self-taught engineer (TypeScript, React, Solidity, Python) 
 
 const experienceData = [
   {
-    title: "Founder & CEO | LeverBrain — Solana Skill Marketplace",
-    period: "2024 - Present | Remote",
+    title: "LeverBrain, Remote -- Founder & CEO",
+    period: "Jan 2024 -- Present",
     company: "LeverBrain",
     url: "https://leverbrain.com",
     responsibilities: [
@@ -30,8 +29,8 @@ const experienceData = [
     ]
   },
   {
-    title: "Founder & Product Lead | Sigma Club — Learning Platform",
-    period: "2023 - Present | Remote",
+    title: "Sigma Club, Remote -- Founder & Product Lead",
+    period: "Jun 2023 -- Present",
     company: "Sigma Club",
     url: "https://sigma.club/",
     responsibilities: [
@@ -41,8 +40,8 @@ const experienceData = [
     ]
   },
   {
-    title: "Blockchain Specialist & DeFi Strategist",
-    period: "2019 - Present | Remote",
+    title: "DeFi/Web3 Consulting, Remote -- Blockchain Specialist & DeFi Strategist",
+    period: "Jan 2019 -- Present",
     company: "DeFi/Web3 Consulting",
     responsibilities: [
       "6+ years deep in crypto: DeFi protocol analysis, yield strategies, NFT launches, smart contract development.",
@@ -51,8 +50,8 @@ const experienceData = [
     ]
   },
   {
-    title: "Founder | E-commerce Business — Digital Products",
-    period: "2017 - 2021 | Remote",
+    title: "E-commerce Digital, Remote -- Founder",
+    period: "Jan 2017 -- Dec 2021",
     company: "E-commerce Digital",
     responsibilities: [
       "Built and operated profitable e-commerce store selling digital products to Amazon sellers.",
@@ -60,8 +59,8 @@ const experienceData = [
     ]
   },
   {
-    title: "Product Manager | FinTech Startup — Loan Comparison Platform",
-    period: "2016 - 2017 | Remote (California-based team)",
+    title: "FinTech Platform, Remote -- Product Manager",
+    period: "Mar 2016 -- Nov 2017",
     company: "FinTech Platform",
     responsibilities: [
       "Contributed development and product management to a loan comparison platform serving US consumers.",
@@ -81,7 +80,7 @@ const educationData = [
   {
     school: "Higher School of Economics",
     degree: "Bachelor's degree, Economics",
-    period: "2012 — 2016",
+    period: "Sep 2012 -- Jun 2016",
     description: "Deepened in web development during studies, pursuing building products from zero instead of traditional investment banking."
   }
 ];
@@ -91,7 +90,7 @@ function App() {
   const [showTweaks, setShowTweaks] = useState(true);
   
   // Tab/scroll focus state for Developer IDE layout
-  const [activeFile, setActiveFile] = useState<'Header.tsx' | 'Summary.md' | 'Experience.tsx' | 'Skills.ts' | 'Education.tsx'>('Experience.tsx');
+  const [activeFile, setActiveFile] = useState<'Header.tsx' | 'Skills.ts' | 'Experience.tsx' | 'Education.tsx'>('Skills.ts');
 
   // Interactive Cursor Chat State
   const [chatMessages, setChatMessages] = useState([
@@ -104,7 +103,7 @@ function App() {
     document.body.className = `theme-${theme}`;
   }, [theme]);
 
-  const scrollToIDESection = (file: 'Header.tsx' | 'Summary.md' | 'Experience.tsx' | 'Skills.ts' | 'Education.tsx') => {
+  const scrollToIDESection = (file: 'Header.tsx' | 'Skills.ts' | 'Experience.tsx' | 'Education.tsx') => {
     setActiveFile(file);
     const container = document.getElementById('ide-scroll-container');
     const target = document.getElementById(`ide-sec-${file}`);
@@ -141,10 +140,9 @@ function App() {
   const renderOriginal = () => (
     <div className="max-w-2xl mx-auto flex flex-col gap-6 py-8">
       <Header />
-      <Summary />
+      <Skills />
       <Experience />
       <Education />
-      <Skills />
     </div>
   );
 
@@ -163,42 +161,15 @@ function App() {
           <span>·</span>
           <a href={`mailto:${email}`} className="hover:text-[#e05c3e] transition-colors underline underline-offset-4">{email}</a>
           <span>·</span>
+          <a href="https://github.com/krlan" target="_blank" rel="noopener noreferrer" className="hover:text-[#e05c3e] transition-colors underline underline-offset-4">github.com/krlan</a>
+          <span>·</span>
           <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#e05c3e] transition-colors underline underline-offset-4">x.com/trefeelove</a>
           <span>·</span>
           <a href={webUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#e05c3e] transition-colors underline underline-offset-4">sigma.club</a>
         </div>
       </header>
 
-      {/* Integrated Editorial Bio (No box, clean serif flow) */}
-      <section className="mb-12">
-        <p className="text-xl lg:text-2xl font-serif text-[#191919] leading-relaxed tracking-tight">
-          {summaryText}
-        </p>
-      </section>
-
-      <section className="flex flex-col gap-8 mb-12">
-        <h2 className="text-2xl font-bold font-serif border-b border-[#e8e2d5] pb-2 text-[#191919]">
-          Professional History
-        </h2>
-        <div className="flex flex-col gap-8">
-          {experienceData.map((job, idx) => (
-            <div key={idx} className="flex flex-col gap-2">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                <h3 className="text-lg font-serif font-bold text-[#191919]">
-                  {job.company} — <span className="font-normal italic text-[#66625b]">{job.title.split(" | ")[0]}</span>
-                </h3>
-                <span className="text-xs font-mono text-[#66625b] mt-1 md:mt-0">{job.period}</span>
-              </div>
-              <ul className="list-disc pl-5 text-sm text-[#66625b] space-y-2 mt-2 leading-relaxed">
-                {job.responsibilities.map((resp, rIdx) => (
-                  <li key={rIdx} dangerouslySetInnerHTML={{ __html: resp }} />
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
+      {/* Technical Expertise (Skills) */}
       <section className="flex flex-col gap-6 mb-12">
         <h2 className="text-2xl font-bold font-serif border-b border-[#e8e2d5] pb-2 text-[#191919]">
           Technical Expertise
@@ -217,6 +188,31 @@ function App() {
         </div>
       </section>
 
+      {/* Professional History (Experience) */}
+      <section className="flex flex-col gap-8 mb-12">
+        <h2 className="text-2xl font-bold font-serif border-b border-[#e8e2d5] pb-2 text-[#191919]">
+          Professional History
+        </h2>
+        <div className="flex flex-col gap-8">
+          {experienceData.map((job, idx) => (
+            <div key={idx} className="flex flex-col gap-2">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                <h3 className="text-lg font-serif font-bold text-[#191919]">
+                  {job.company} — <span className="font-normal italic text-[#66625b]">{job.title.split(" -- ")[1]}</span>
+                </h3>
+                <span className="text-xs font-mono text-[#66625b] mt-1 md:mt-0">{job.period}</span>
+              </div>
+              <ul className="list-disc pl-5 text-sm text-[#66625b] space-y-2 mt-2 leading-relaxed">
+                {job.responsibilities.map((resp, rIdx) => (
+                  <li key={rIdx} dangerouslySetInnerHTML={{ __html: resp }} />
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Academic Foundation (Education) */}
       <section className="flex flex-col gap-6">
         <h2 className="text-2xl font-bold font-serif border-b border-[#e8e2d5] pb-2 text-[#191919]">
           Academic Foundation
@@ -225,10 +221,11 @@ function App() {
           {educationData.map((edu, idx) => (
             <div key={idx} className="flex flex-col gap-1">
               <div className="flex justify-between items-baseline">
-                <h4 className="text-base font-serif font-bold text-[#191919]">{edu.school}</h4>
+                <h4 className="text-base font-serif font-bold text-[#191919]">
+                  <strong>{edu.school}</strong>, Saint-Petersburg, Russia -- {edu.degree}
+                </h4>
                 <span className="text-xs font-mono text-[#66625b]">{edu.period}</span>
               </div>
-              <p className="text-sm text-[#66625b] italic">{edu.degree}</p>
               {edu.description && (
                 <p className="text-xs text-[#66625b] leading-relaxed mt-1">{edu.description}</p>
               )}
@@ -254,50 +251,18 @@ function App() {
         <div className="flex flex-wrap gap-4 text-xs font-mono text-neutral-500">
           <a href={`mailto:${email}`} className="hover:text-white transition-colors">{email}</a>
           <span>/</span>
+          <a href="https://github.com/krlan" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">github.com/krlan</a>
+          <span>/</span>
           <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">x.com/trefeelove</a>
           <span>/</span>
           <a href={webUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">sigma.club</a>
         </div>
       </header>
 
-      {/* Intro section */}
+      {/* Technical capabilities (Skills) */}
       <section className="mb-16 border-b border-neutral-900 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <h2 className="text-xs font-mono text-neutral-400 uppercase tracking-widest">01 / Profile Overview</h2>
-          <div className="md:col-span-2 text-xl font-light text-neutral-200 leading-relaxed font-sans">
-            {summaryText}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience grid layout */}
-      <section className="mb-16 border-b border-neutral-900 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <h2 className="text-xs font-mono text-neutral-400 uppercase tracking-widest">02 / Selected Experience</h2>
-          <div className="md:col-span-2 flex flex-col gap-10">
-            {experienceData.map((job, idx) => (
-              <div key={idx} className="flex flex-col gap-2">
-                <div className="flex justify-between items-baseline">
-                  <h3 className="text-lg font-bold text-white tracking-tight">
-                    {job.company} — <span className="text-neutral-400 font-light text-sm">{job.title.split(" | ")[0]}</span>
-                  </h3>
-                  <span className="text-xs font-mono text-neutral-500">{job.period}</span>
-                </div>
-                <ul className="space-y-2 text-sm text-neutral-400 mt-2">
-                  {job.responsibilities.map((resp, rIdx) => (
-                    <li key={rIdx} className="leading-relaxed pl-3 border-l border-neutral-800 hover:border-white transition-colors" dangerouslySetInnerHTML={{ __html: resp }} />
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technical capabilities */}
-      <section className="mb-16 border-b border-neutral-900 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <h2 className="text-xs font-mono text-neutral-400 uppercase tracking-widest">03 / Capabilities</h2>
+          <h2 className="text-xs font-mono text-neutral-400 uppercase tracking-widest">01 / Capabilities</h2>
           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {skillsData.map((cat, idx) => (
               <div key={idx} className="border border-neutral-900 p-6 rounded-lg hover:border-neutral-800 transition-colors">
@@ -313,18 +278,43 @@ function App() {
         </div>
       </section>
 
-      {/* Academic Foundation */}
+      {/* Experience grid layout */}
+      <section className="mb-16 border-b border-neutral-900 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="text-xs font-mono text-neutral-400 uppercase tracking-widest">02 / Selected Experience</h2>
+          <div className="md:col-span-2 flex flex-col gap-10">
+            {experienceData.map((job, idx) => (
+              <div key={idx} className="flex flex-col gap-2">
+                <div className="flex justify-between items-baseline">
+                  <h3 className="text-lg font-bold text-white tracking-tight">
+                    {job.title.split(" -- ")[0]} — <span className="text-neutral-400 font-light text-sm">{job.title.split(" -- ")[1]}</span>
+                  </h3>
+                  <span className="text-xs font-mono text-neutral-500">{job.period}</span>
+                </div>
+                <ul className="space-y-2 text-sm text-neutral-400 mt-2">
+                  {job.responsibilities.map((resp, rIdx) => (
+                    <li key={rIdx} className="leading-relaxed pl-3 border-l border-neutral-800 hover:border-white transition-colors" dangerouslySetInnerHTML={{ __html: resp }} />
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Academic Foundation (Education) */}
       <section className="pb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <h2 className="text-xs font-mono text-neutral-400 uppercase tracking-widest">04 / Education</h2>
+          <h2 className="text-xs font-mono text-neutral-400 uppercase tracking-widest">03 / Education</h2>
           <div className="md:col-span-2 flex flex-col gap-4">
             {educationData.map((edu, idx) => (
               <div key={idx} className="flex flex-col gap-1">
                 <div className="flex justify-between items-baseline">
-                  <h4 className="text-base font-bold text-white">{edu.school}</h4>
+                  <h4 className="text-base font-bold text-white">
+                    <strong>{edu.school}</strong>, Saint-Petersburg, Russia -- {edu.degree}
+                  </h4>
                   <span className="text-xs font-mono text-neutral-500">{edu.period}</span>
                 </div>
-                <p className="text-xs text-neutral-400 font-mono mt-0.5">{edu.degree}</p>
                 {edu.description && (
                   <p className="text-xs text-neutral-500 leading-relaxed mt-2">{edu.description}</p>
                 )}
@@ -354,43 +344,13 @@ function App() {
         <div className="flex justify-center gap-6 text-xs font-mono text-slate-500">
           <a href={`mailto:${email}`} className="hover:text-sky-400 transition-colors">{email}</a>
           <span>·</span>
+          <a href="https://github.com/krlan" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors">github.com/krlan</a>
+          <span>·</span>
           <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors">x.com/trefeelove</a>
           <span>·</span>
           <a href={webUrl} target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors">sigma.club</a>
         </div>
       </header>
-
-      {/* Summary Box */}
-      <section className="mb-16 p-6 rounded-2xl bg-slate-900/40 backdrop-blur border border-slate-800/80 shadow-[0_0_30px_-15px_rgba(56,189,248,0.15)]">
-        <h3 className="text-xs font-mono text-sky-400 uppercase tracking-wider mb-2">// Executive Overview</h3>
-        <p className="text-base text-slate-300 leading-relaxed font-light">
-          {summaryText}
-        </p>
-      </section>
-
-      {/* Experience Showcases */}
-      <section className="mb-16">
-        <h2 className="text-xs font-mono text-sky-400 uppercase tracking-widest mb-6 border-b border-slate-800 pb-2">
-          // Product & Protocol Deployments
-        </h2>
-        <div className="flex flex-col gap-6">
-          {experienceData.map((job, idx) => (
-            <div key={idx} className="p-6 rounded-2xl bg-[#0a0e14]/50 border border-slate-800 hover:border-sky-500/25 transition-all duration-300 group">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
-                <h3 className="text-lg font-bold text-white tracking-tight">
-                  {job.company} — <span className="text-slate-400 font-light text-sm">{job.title.split(" | ")[0]}</span>
-                </h3>
-                <span className="text-xs font-mono text-slate-500">{job.period}</span>
-              </div>
-              <ul className="space-y-2 text-xs text-slate-400 leading-relaxed list-none pl-0">
-                {job.responsibilities.map((resp, rIdx) => (
-                  <li key={rIdx} className="pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-sky-500" dangerouslySetInnerHTML={{ __html: resp }} />
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Skills features grid */}
       <section className="mb-16">
@@ -415,7 +375,31 @@ function App() {
         </div>
       </section>
 
-      {/* Academic Background */}
+      {/* Experience Showcases */}
+      <section className="mb-16">
+        <h2 className="text-xs font-mono text-sky-400 uppercase tracking-widest mb-6 border-b border-slate-800 pb-2">
+          // Product & Protocol Deployments
+        </h2>
+        <div className="flex flex-col gap-6">
+          {experienceData.map((job, idx) => (
+            <div key={idx} className="p-6 rounded-2xl bg-[#0a0e14]/50 border border-slate-800 hover:border-sky-500/25 transition-all duration-300 group">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
+                <h3 className="text-lg font-bold text-white tracking-tight">
+                  {job.title.split(" -- ")[0]} — <span className="text-slate-400 font-light text-sm">{job.title.split(" -- ")[1]}</span>
+                </h3>
+                <span className="text-xs font-mono text-slate-500">{job.period}</span>
+              </div>
+              <ul className="space-y-2 text-xs text-slate-400 leading-relaxed list-none pl-0">
+                {job.responsibilities.map((resp, rIdx) => (
+                  <li key={rIdx} className="pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-sky-500" dangerouslySetInnerHTML={{ __html: resp }} />
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Academic Background (Education) */}
       <section className="p-6 rounded-2xl bg-slate-900/40 backdrop-blur border border-slate-800/80">
         <h2 className="text-xs font-mono text-sky-400 uppercase tracking-widest mb-4">
           // Education Background
@@ -423,10 +407,11 @@ function App() {
         {educationData.map((edu, idx) => (
           <div key={idx} className="flex flex-col gap-1">
             <div className="flex justify-between items-baseline">
-              <h4 className="text-base font-bold text-white">{edu.school}</h4>
+              <h4 className="text-base font-bold text-white">
+                <strong>{edu.school}</strong>, Saint-Petersburg, Russia -- {edu.degree}
+              </h4>
               <span className="text-xs font-mono text-slate-500">{edu.period}</span>
             </div>
-            <p className="text-xs text-sky-400/80 font-mono mt-0.5">{edu.degree}</p>
             {edu.description && (
               <p className="text-xs text-slate-400 leading-relaxed mt-2">{edu.description}</p>
             )}
@@ -458,40 +443,6 @@ function App() {
         </div>
       </header>
 
-      {/* Profile summary */}
-      <section className="mb-12 border-b border-[#21252e] pb-10">
-        <h2 className="text-xs font-mono uppercase text-[#e5c07b] tracking-wider mb-4">
-          // Profile Summary
-        </h2>
-        <p className="text-base leading-relaxed text-[#abb2bf] font-light font-mono">
-          {summaryText}
-        </p>
-      </section>
-
-      {/* Experience details */}
-      <section className="mb-12 border-b border-[#21252e] pb-10">
-        <h2 className="text-xs font-mono uppercase text-[#e5c07b] tracking-wider mb-6">
-          // Professional Experience
-        </h2>
-        <div className="flex flex-col gap-8">
-          {experienceData.map((job, idx) => (
-            <div key={idx} className="border-l border-[#21252e] pl-4">
-              <div className="flex justify-between items-baseline mb-2">
-                <h3 className="text-base font-bold text-white font-mono">
-                  {job.company} — <span className="text-[#e5c07b] font-light text-xs">{job.title.split(" | ")[0]}</span>
-                </h3>
-                <span className="text-xs font-mono text-[#5c6370]">{job.period}</span>
-              </div>
-              <ul className="space-y-2 text-xs text-[#abb2bf] mt-3 list-disc pl-4">
-                {job.responsibilities.map((resp, rIdx) => (
-                  <li key={rIdx} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: resp }} />
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Technical skills */}
       <section className="mb-12 border-b border-[#21252e] pb-10">
         <h2 className="text-xs font-mono uppercase text-[#e5c07b] tracking-wider mb-6">
@@ -511,6 +462,30 @@ function App() {
         </div>
       </section>
 
+      {/* Experience details */}
+      <section className="mb-12 border-b border-[#21252e] pb-10">
+        <h2 className="text-xs font-mono uppercase text-[#e5c07b] tracking-wider mb-6">
+          // Professional Experience
+        </h2>
+        <div className="flex flex-col gap-8">
+          {experienceData.map((job, idx) => (
+            <div key={idx} className="border-l border-[#21252e] pl-4">
+              <div className="flex justify-between items-baseline mb-2">
+                <h3 className="text-base font-bold text-white font-mono">
+                  {job.title.split(" -- ")[0]} — <span className="text-[#e5c07b] font-light text-xs">{job.title.split(" -- ")[1]}</span>
+                </h3>
+                <span className="text-xs font-mono text-[#5c6370]">{job.period}</span>
+              </div>
+              <ul className="space-y-2 text-xs text-[#abb2bf] mt-3 list-disc pl-4">
+                {job.responsibilities.map((resp, rIdx) => (
+                  <li key={rIdx} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: resp }} />
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Education */}
       <section className="pb-10">
         <h2 className="text-xs font-mono uppercase text-[#e5c07b] tracking-wider mb-4">
@@ -519,10 +494,11 @@ function App() {
         {educationData.map((edu, idx) => (
           <div key={idx} className="flex flex-col gap-1">
             <div className="flex justify-between items-baseline">
-              <h4 className="text-base font-bold text-white font-mono">{edu.school}</h4>
+              <h4 className="text-base font-bold text-white font-mono">
+                <strong>{edu.school}</strong>, Saint-Petersburg, Russia -- {edu.degree}
+              </h4>
               <span className="text-xs font-mono text-[#5c6370]">{edu.period}</span>
             </div>
-            <p className="text-xs text-[#e5c07b] font-mono mt-0.5">{edu.degree}</p>
             {edu.description && (
               <p className="text-xs text-[#5c6370] leading-relaxed mt-2">{edu.description}</p>
             )}
@@ -568,7 +544,7 @@ function App() {
                 </div>
                 
                 {/* File list buttons */}
-                {(['Header.tsx', 'Summary.md', 'Experience.tsx', 'Skills.ts', 'Education.tsx'] as const).map(file => (
+                {(['Header.tsx', 'Skills.ts', 'Experience.tsx', 'Education.tsx'] as const).map(file => (
                   <button
                     key={file}
                     onClick={() => scrollToIDESection(file)}
@@ -615,7 +591,7 @@ function App() {
           <div className="flex-1 flex flex-col min-w-0 bg-[#0d0e12]">
             {/* IDE Tabs list */}
             <div className="bg-[#0e111a] border-b border-[#222735] flex overflow-x-auto select-none">
-              {(['Header.tsx', 'Summary.md', 'Experience.tsx', 'Skills.ts', 'Education.tsx'] as const).map(file => (
+              {(['Header.tsx', 'Skills.ts', 'Experience.tsx', 'Education.tsx'] as const).map(file => (
                 <button
                   key={file}
                   onClick={() => scrollToIDESection(file)}
@@ -649,17 +625,17 @@ function App() {
                 <Header />
               </div>
 
-              {/* Section 2: Summary */}
+              {/* Section 2: Skills */}
               <div 
-                id="ide-sec-Summary.md" 
+                id="ide-sec-Skills.ts" 
                 className={`transition-all duration-300 ${
-                  activeFile === 'Summary.md' 
+                  activeFile === 'Skills.ts' 
                     ? 'opacity-100 pl-4 border-l-2 border-indigo-500' 
                     : 'opacity-35 pl-4 border-l border-transparent'
                 }`}
               >
-                <div className="text-[10px] text-slate-600 mb-2 font-mono select-none">// Document: Summary.md</div>
-                <Summary />
+                <div className="text-[10px] text-slate-600 mb-2 font-mono select-none">// Dataset: Skills.ts</div>
+                <Skills />
               </div>
 
               {/* Section 3: Experience */}
@@ -675,20 +651,7 @@ function App() {
                 <Experience />
               </div>
 
-              {/* Section 4: Skills */}
-              <div 
-                id="ide-sec-Skills.ts" 
-                className={`transition-all duration-300 ${
-                  activeFile === 'Skills.ts' 
-                    ? 'opacity-100 pl-4 border-l-2 border-indigo-500' 
-                    : 'opacity-35 pl-4 border-l border-transparent'
-                }`}
-              >
-                <div className="text-[10px] text-slate-600 mb-2 font-mono select-none">// Dataset: Skills.ts</div>
-                <Skills />
-              </div>
-
-              {/* Section 5: Education */}
+              {/* Section 4: Education */}
               <div 
                 id="ide-sec-Education.tsx" 
                 className={`transition-all duration-300 ${

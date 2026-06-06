@@ -29,6 +29,8 @@ const Header: React.FC = () => {
         <span className="text-[var(--border)]">·</span>
         <a href="mailto:i@sigma.club" className="hover:text-[var(--accent-dim)] transition-colors">i@sigma.club</a>
         <span className="text-[var(--border)]">·</span>
+        <a href="https://github.com/krlan" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-dim)] transition-colors">github.com/krlan</a>
+        <span className="text-[var(--border)]">·</span>
         <a href="https://x.com/trefeelove" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-dim)] transition-colors">x.com/trefeelove</a>
         <span className="text-[var(--border)]">·</span>
         <a href="https://sigma.club" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-dim)] transition-colors">sigma.club</a>
