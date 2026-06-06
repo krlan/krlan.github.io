@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0c0c0c;
+  --surface: #141414;
+  --border: #1f1f1f;
+  --text: #e5e5e5;
+  --text-muted: #737373;
+  --accent: #22c55e;
+  --accent-dim: #166534;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: white;
+    color: #171717;
+  }
+  .no-print { display: none; }
+}
+
+@layer components {
+  .section-title {
+    @apply text-xs font-semibold mb-3 mt-5 uppercase tracking-wider;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+  }
+  
+  .experience-entry {
+    @apply mb-4 pb-4;
+    border-bottom: 1px solid var(--border);
+  }
+  .experience-entry:last-child {
+    border-bottom: none;
+  }
+  
+  .experience-entry h3 {
+    @apply text-sm font-semibold;
+    color: #fff;
+  }
+  
+  .experience-entry .details {
+    @apply text-xs mb-1;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+  }
+  
+  .experience-entry ul {
+    @apply text-sm space-y-0.5;
+    list-style: none;
+    color: var(--text-muted);
+  }
+  
+  .experience-entry li {
+    @apply pl-4 relative;
+  }
+  .experience-entry li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent-dim);
+    font-weight: bold;
+  }
+  
+  .skills-category {
+    @apply py-1;
+  }
+  
+  .skills-category h4 {
+    @apply text-xs font-semibold mb-0.5 uppercase tracking-wide;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+  }
+  
+  .skills-category p {
+    @apply text-xs;
+    color: var(--text-muted);
+  }
+  
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+}
