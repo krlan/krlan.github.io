@@ -93,6 +93,14 @@ function App() {
   const [showTweaks, setShowTweaks] = useState(true);
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlTheme = params.get('theme');
+    if (urlTheme && ['original', 'anthropic', 'openai', 'ats-classic'].includes(urlTheme)) {
+      setTheme(urlTheme as any);
+    }
+  }, []);
+
+  useEffect(() => {
     document.body.className = `theme-${theme}`;
   }, [theme]);
 
@@ -288,7 +296,7 @@ function App() {
 
   // 7. ATS CLASSIC LAYOUT (Standard Printable Grayscale Paper)
   const renderATSClassic = () => (
-    <div className="max-w-2xl mx-auto flex flex-col gap-6 py-12 px-6">
+    <div className="max-w-2xl mx-auto flex flex-col gap-3 py-6 px-6">
       <Header />
       <Skills />
       <Experience />
