@@ -181,6 +181,161 @@
   background-color: var(--bg);
 }
 
+/* 7. Theme: ATS Classic (Standard Printable Grayscale Paper) */
+.theme-ats-classic {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --border: #d1d5db;
+  --text: #111827;
+  --text-muted: #374151;
+  --accent: #111827;
+  --accent-dim: #374151;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+}
+
+.theme-ats-classic body {
+  background-color: var(--bg);
+}
+
+.theme-ats-classic header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: 2px solid #111827;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.theme-ats-classic header h1 {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  color: #111827 !important;
+}
+
+.theme-ats-classic header p {
+  font-size: 0.95rem !important;
+  color: #374151 !important;
+  font-weight: 500;
+  margin-bottom: 0.75rem !important;
+}
+
+.theme-ats-classic header .status-badge,
+.theme-ats-classic header .stats-bar {
+  display: none !important;
+}
+
+.theme-ats-classic header .contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.8rem !important;
+  color: #374151 !important;
+  flex-wrap: wrap;
+}
+
+.theme-ats-classic header .contact-info a {
+  color: #374151 !important;
+  text-decoration: underline !important;
+}
+
+.theme-ats-classic .section-title {
+  font-family: 'Inter', sans-serif !important;
+  text-transform: uppercase !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  border-bottom: 1px solid #111827;
+  padding-bottom: 0.2rem;
+  color: #111827 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+.theme-ats-classic .experience-entry,
+.theme-ats-classic .education-entry {
+  position: relative;
+  border-bottom: none !important;
+  padding-bottom: 0px !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.theme-ats-classic .experience-entry h3,
+.theme-ats-classic .education-entry h3 {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  padding-right: 180px; /* Make space for dates */
+  line-height: 1.3 !important;
+}
+
+.theme-ats-classic .experience-entry h3 strong,
+.theme-ats-classic .education-entry h3 strong {
+  font-weight: 700 !important;
+}
+
+.theme-ats-classic .experience-entry h3 a {
+  color: #111827 !important;
+  text-decoration: none !important;
+}
+
+.theme-ats-classic .experience-entry h3 a:hover {
+  text-decoration: underline !important;
+}
+
+.theme-ats-classic .experience-entry .details,
+.theme-ats-classic .education-entry .details {
+  position: absolute;
+  right: 0;
+  top: 1px;
+  margin: 0 !important;
+  font-size: 0.8rem !important;
+  color: #374151 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500;
+}
+
+.theme-ats-classic .experience-entry ul {
+  margin-top: 0.4rem !important;
+  space-y: 0.5;
+}
+
+.theme-ats-classic .experience-entry li {
+  font-size: 0.85rem !important;
+  color: #374151 !important;
+  line-height: 1.4 !important;
+}
+
+.theme-ats-classic .experience-entry li::before {
+  content: '•' !important;
+  color: #111827 !important;
+  font-weight: normal !important;
+}
+
+.theme-ats-classic .skills-category {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+.theme-ats-classic .skills-category h4 {
+  font-family: 'Inter', sans-serif !important;
+  color: #111827 !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.1rem !important;
+}
+
+.theme-ats-classic .skills-category p {
+  font-size: 0.85rem !important;
+  color: #374151 !important;
+  line-height: 1.4 !important;
+}
+
+
 body {
   font-family: var(--font-sans);
   background: var(--bg);

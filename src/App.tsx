@@ -86,7 +86,7 @@ const educationData = [
 ];
 
 function App() {
-  const [theme, setTheme] = useState<'original' | 'anthropic' | 'openai' | 'cursor' | 'zed' | 'developer-ide'>('original');
+  const [theme, setTheme] = useState<'original' | 'anthropic' | 'openai' | 'cursor' | 'zed' | 'developer-ide' | 'ats-classic'>('original');
   const [showTweaks, setShowTweaks] = useState(true);
   
   // Tab/scroll focus state for Developer IDE layout
@@ -683,6 +683,16 @@ function App() {
     </div>
   );
 
+  // 7. ATS CLASSIC LAYOUT (Standard Printable Grayscale Paper)
+  const renderATSClassic = () => (
+    <div className="max-w-2xl mx-auto flex flex-col gap-6 py-12 px-6">
+      <Header />
+      <Skills />
+      <Experience />
+      <Education />
+    </div>
+  );
+
   // Selector menu widget
   const renderSelector = () => (
     showTweaks && (
@@ -702,7 +712,8 @@ function App() {
                 { id: 'openai', label: 'OpenAI Site', tagline: 'Minimalist Black & White' },
                 { id: 'cursor', label: 'Cursor Site', tagline: 'Glowing Cosmic SaaS' },
                 { id: 'zed', label: 'Zed Site', tagline: 'Refined Slate Marketing' },
-                { id: 'developer-ide', label: 'Developer IDE', tagline: 'Workspace Tab Scroll' }
+                { id: 'developer-ide', label: 'Developer IDE', tagline: 'Workspace Tab Scroll' },
+                { id: 'ats-classic', label: 'ATS Classic', tagline: 'Printable Grayscale Paper' }
               ] as const
             ).map((option) => (
               <button
@@ -743,6 +754,7 @@ function App() {
           {theme === 'cursor' && renderCursor()}
           {theme === 'zed' && renderZed()}
           {theme === 'developer-ide' && renderDeveloperIDE()}
+          {theme === 'ats-classic' && renderATSClassic()}
         </motion.div>
       </AnimatePresence>
 
