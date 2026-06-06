@@ -6,7 +6,7 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import { AnimatePresence, motion } from 'framer-motion';
 import { 
-  Layers, ChevronDown, Folder, File, Code, GitBranch, Sparkles, Send, MessageSquare 
+  Layers, ChevronDown, Folder, File, Code, GitBranch, Sparkles, Send, MessageSquare, Terminal
 } from 'lucide-react';
 
 const email = "i@sigma.club";
