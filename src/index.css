@@ -16,97 +16,147 @@
   --font-display: 'Inter', sans-serif;
 }
 
-/* 1. Theme: ATS-Friendly Light (Default) */
-.theme-ats-light {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --border: #e5e7eb;
-  --text: #111827;
-  --text-muted: #4b5563;
-  --accent: #2563eb; /* Professional Blue */
-  --accent-dim: #1d4ed8;
+/* 1. Theme: Original CV (Dark Green) */
+.theme-original {
+  --bg: #0c0c0c;
+  --surface: #141414;
+  --border: #1f1f1f;
+  --text: #e5e5e5;
+  --text-muted: #737373;
+  --accent: #22c55e;
+  --accent-dim: #166534;
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Inter', sans-serif;
+  --font-display: 'JetBrains Mono', monospace;
 }
 
-.theme-ats-light body {
+.theme-original body {
   background-color: var(--bg);
 }
 
-/* 2. Theme: Executive Serif */
-.theme-executive-serif {
-  --bg: #fdfbf7; /* Warm Paper */
-  --surface: #ffffff;
-  --border: #e7e5e4;
-  --text: #1c1917;
-  --text-muted: #6b6661;
-  --accent: #44403c; /* Elegant Slate Charcoal */
-  --accent-dim: #292524;
+.theme-original .section-title {
+  font-family: 'JetBrains Mono', monospace !important;
+  color: var(--text-muted) !important;
+}
+
+.theme-original .skills-category h4 {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+.theme-original .experience-entry h3 {
+  color: #ffffff !important;
+}
+
+/* 2. Theme: Anthropic (Warm Cream Serif) */
+.theme-anthropic {
+  --bg: #fbfaf7;
+  --surface: #f7f3eb;
+  --border: #e8e2d5;
+  --text: #191919;
+  --text-muted: #66625b;
+  --accent: #e05c3e;
+  --accent-dim: #b24025;
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Playfair Display', serif;
 }
 
-.theme-executive-serif body {
+.theme-anthropic body {
   background-color: var(--bg);
-  background-image: linear-gradient(rgba(28, 25, 23, 0.01) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(28, 25, 23, 0.01) 1px, transparent 1px);
-  background-size: 30px 30px;
 }
 
-.theme-executive-serif .section-title {
+.theme-anthropic .section-title {
   font-family: 'Playfair Display', serif !important;
-  font-style: italic;
-  font-size: 1.15rem !important;
   text-transform: none !important;
+  font-size: 1.2rem !important;
   letter-spacing: normal !important;
-  border-bottom: 1px solid var(--border);
+  font-weight: 700 !important;
+  border-bottom: 2px solid var(--accent);
   padding-bottom: 0.25rem;
+  color: var(--text) !important;
 }
 
-/* 3. Theme: Slate Developer Dark */
-.theme-slate-dark {
-  --bg: #0f172a; /* Slate Dark */
-  --surface: #1e293b;
-  --border: #334155;
-  --text: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent: #38bdf8; /* Sky Accent */
-  --accent-dim: #0284c7;
-  --font-sans: 'Space Grotesk', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+.theme-anthropic .experience-entry h3 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.05rem !important;
+  color: var(--text) !important;
 }
 
-.theme-slate-dark body {
-  background-color: var(--bg);
-}
-
-.theme-slate-dark .experience-entry h3 {
-  color: #ffffff !important;
-}
-
-/* 4. Theme: Minimalist Accent */
-.theme-minimal-accent {
-  --bg: #ffffff;
-  --surface: #fafafa;
-  --border: #f3f4f6;
-  --text: #171717;
-  --text-muted: #737373;
-  --accent: #059669; /* Forest Emerald Accent */
-  --accent-dim: #047857;
+/* 3. Theme: OpenAI (Futuristic Minimalist Dark) */
+.theme-openai {
+  --bg: #0d0d0e;
+  --surface: #171718;
+  --border: #2e2e30;
+  --text: #ececf1;
+  --text-muted: #9b9ba6;
+  --accent: #10a37f;
+  --accent-dim: #0e8a6c;
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Inter', sans-serif;
 }
 
-.theme-minimal-accent body {
+.theme-openai body {
   background-color: var(--bg);
+  background-image: radial-gradient(circle at 50% 50%, rgba(16, 163, 127, 0.05) 0%, transparent 80%);
 }
 
-.theme-minimal-accent .section-title {
-  border-left: 3px solid var(--accent);
-  padding-left: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 2rem !important;
+.theme-openai .section-title {
+  font-family: 'Inter', sans-serif !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.theme-openai .experience-entry h3 {
+  color: #ffffff !important;
+}
+
+/* 4. Theme: Zed / Cursor (Developer IDE Dark) */
+.theme-zed-cursor {
+  --bg: #0b0d11;
+  --surface: #141820;
+  --border: #21262e;
+  --text: #c5cdd8;
+  --text-muted: #6e7987;
+  --accent: #51afef;
+  --accent-dim: #3584c3;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'JetBrains Mono', monospace;
+}
+
+.theme-zed-cursor body {
+  background-color: var(--bg);
+  background-image: 
+    linear-gradient(rgba(81, 175, 239, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(81, 175, 239, 0.015) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.theme-zed-cursor .section-title {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.8rem !important;
+  color: var(--accent) !important;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 1.75rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.theme-zed-cursor .experience-entry {
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+  border-bottom: none;
+  margin-bottom: 1.5rem;
+}
+
+.theme-zed-cursor .experience-entry h3 {
+  font-family: 'JetBrains Mono', monospace !important;
+  color: #ffffff !important;
 }
 
 body {

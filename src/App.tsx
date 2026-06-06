@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Layers } from 'lucide-react';
 
 function App() {
-  const [theme, setTheme] = useState<'ats-light' | 'executive-serif' | 'slate-dark' | 'minimal-accent'>('ats-light');
+  const [theme, setTheme] = useState<'original' | 'anthropic' | 'openai' | 'zed-cursor'>('original');
   const [showTweaks, setShowTweaks] = useState(true);
 
   useEffect(() => {
@@ -64,10 +64,10 @@ function App() {
             <div className="flex flex-col gap-1.5">
               {(
                 [
-                  { id: 'ats-light', label: 'ATS Light', tagline: 'HR/AI Screener Friendly' },
-                  { id: 'executive-serif', label: 'Executive Serif', tagline: 'Elegant Warm Paper' },
-                  { id: 'slate-dark', label: 'Slate Dark', tagline: 'Polished Developer Theme' },
-                  { id: 'minimal-accent', label: 'Minimal Accent', tagline: 'Ultra-Clean Forest Green' },
+                  { id: 'original', label: 'Original CV', tagline: 'Green & Dark Classic' },
+                  { id: 'anthropic', label: 'Anthropic', tagline: 'Warm Cream Editorial' },
+                  { id: 'openai', label: 'OpenAI', tagline: 'Minimalist Off-Black' },
+                  { id: 'zed-cursor', label: 'Zed & Cursor', tagline: 'Developer Code IDE' },
                 ] as const
               ).map((option) => (
                 <button
