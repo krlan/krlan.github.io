@@ -27,7 +27,7 @@ const Header: React.FC = () => {
       <div className="font-mono text-xs text-neutral-500 flex flex-wrap gap-4">
         <span>remote</span>
         <span className="text-neutral-700">·</span>
-        <a href="mailto:igor@sigma.club" className="hover:text-green-500 transition-colors">igor@sigma.club</a>
+        <a href="mailto:i@sigma.club" className="hover:text-green-500 transition-colors">i@sigma.club</a>
         <span className="text-neutral-700">·</span>
         <a href="https://x.com/trefeelove" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">x.com/trefeelove</a>
         <span className="text-neutral-700">·</span>

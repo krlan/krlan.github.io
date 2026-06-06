@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,12 +12,159 @@
   --text-muted: #737373;
   --accent: #22c55e;
   --accent-dim: #166534;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+}
+
+/* Theme: Classic Dark */
+.theme-classic {
+  --bg: #0c0c0c;
+  --surface: #141414;
+  --border: #1f1f1f;
+  --text: #e5e5e5;
+  --text-muted: #737373;
+  --accent: #22c55e;
+  --accent-dim: #166534;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+}
+
+/* Theme: Cyberpunk Terminal */
+.theme-terminal {
+  --bg: #050505;
+  --surface: #0a0a0a;
+  --border: #00ff6633;
+  --text: #00ff66;
+  --text-muted: #007722;
+  --accent: #00ff66;
+  --accent-dim: #003311;
+  --font-sans: 'JetBrains Mono', monospace;
+  --font-display: 'JetBrains Mono', monospace;
+}
+
+.theme-terminal * {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+.theme-terminal a {
+  text-shadow: 0 0 4px var(--accent);
+}
+
+.theme-terminal ::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Theme: Glassmorphic Ambient Glow */
+.theme-glass {
+  --bg: #030712;
+  --surface: rgba(17, 24, 39, 0.45);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f3f4f6;
+  --text-muted: #9ca3af;
+  --accent: #38bdf8;
+  --accent-dim: #0284c7;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+}
+
+.theme-glass .glass-panel {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Theme: Nordic Editorial */
+.theme-editorial {
+  --bg: #fcfbf7;
+  --surface: #f7f6f0;
+  --border: #e5e3d7;
+  --text: #1c1917;
+  --text-muted: #78716c;
+  --accent: #c2410c;
+  --accent-dim: #ea580c;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+}
+
+.theme-editorial body {
+  background-color: var(--bg);
+}
+
+/* Interactive Card Deck Styling */
+.theme-deck {
+  --bg: #0a0b10;
+  --surface: #12131a;
+  --border: #1d1e26;
+  --text: #e2e8f0;
+  --text-muted: #64748b;
+  --accent: #8b5cf6;
+  --accent-dim: #6d28d9;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, .section-title {
+  font-family: var(--font-display);
+}
+
+/* Scanlines overlay for terminal */
+.terminal-scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.15) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.terminal-scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    transparent 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+/* Animated background blobs for glassmorphism */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-40px, 40px) scale(1.05); }
+}
+
+.ambient-blob-1 {
+  animation: float-slow 15s ease-in-out infinite;
+}
+
+.ambient-blob-2 {
+  animation: float-medium 12s ease-in-out infinite;
 }
 
 @media print {
@@ -33,7 +180,7 @@ body {
 @layer components {
   .section-title {
     @apply text-xs font-semibold mb-3 mt-5 uppercase tracking-wider;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-sans);
     color: var(--text-muted);
   }
   
@@ -47,12 +194,12 @@ body {
   
   .experience-entry h3 {
     @apply text-sm font-semibold;
-    color: #fff;
+    color: var(--text);
   }
   
   .experience-entry .details {
     @apply text-xs mb-1;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-sans);
     color: var(--text-muted);
   }
   
@@ -69,7 +216,7 @@ body {
     content: '›';
     position: absolute;
     left: 0;
-    color: var(--accent-dim);
+    color: var(--accent);
     font-weight: bold;
   }
   
@@ -79,7 +226,7 @@ body {
   
   .skills-category h4 {
     @apply text-xs font-semibold mb-0.5 uppercase tracking-wide;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-sans);
     color: var(--accent);
   }
   

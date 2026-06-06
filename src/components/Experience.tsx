@@ -5,15 +5,15 @@ import ExperienceEntry from './ExperienceEntry';
 
 const experienceData = [
   {
-    title: "Founder & CEO | <a href='https://leverbrain.com' target='_blank' rel='noopener noreferrer'>LeverBrain</a> — AI Automation Agency",
+    title: "Founder & CEO | <a href='https://leverbrain.com' target='_blank' rel='noopener noreferrer'>LeverBrain</a> — Solana Skill Marketplace",
     period: "2024 - Present | Remote",
     responsibilities: [
-      "Founded an AI automation agency building custom AI agents for businesses — specializing in voice AI, email automation, translation, and recruiting solutions.",
-      "<strong>Voice AI Agents:</strong> Building conversational agents for customer support, appointment booking, and lead qualification using Twilio, Vapi, ElevenLabs, and custom LLM integrations.",
-      "<strong>Email Automation:</strong> Developing intelligent email responders and outreach sequences powered by GPT-4/Claude with CRM integrations (HubSpot, Salesforce).",
-      "<strong>AI Translation:</strong> Implementing real-time multilingual translation pipelines for global business communication using Whisper and LLM-based translation.",
-      "<strong>Recruiting Automation:</strong> Creating AI-powered hiring tools — resume parsing, candidate scoring, automated outreach, and interview scheduling systems.",
-      "Tech stack: LangChain, Gemimni/Claude/OpenAI API, Whisper, ElevenLabs, Vapi, n8n, Make.com, custom RAG pipelines, Twilio, SendGrid."
+      "Pivoted Leverbrain into a decentralized high-fidelity marketplace for AI agent skills, strategies, and deployment blueprints.",
+      "<strong>Solana Smart Contracts (Anchor/Rust):</strong> Designed and deployed the on-chain licensing registry and purchase access ledger, settling microtransactions in USDC using the SPL Token program.",
+      "<strong>Cryptographic Access Control:</strong> Engineered secure backend file delivery in Convex by validating Web3 wallet signatures and querying on-chain receipt PDAs via Helius RPC nodes.",
+      "<strong>Real-time Architecture (Convex):</strong> Built low-latency capability card rendering and metadata caching using Convex (DB & Edge Functions) and Convex File Storage.",
+      "<strong>Operator Experience:</strong> Developed a command-line interface (CLI) and Next.js 15 web application using a tactical glassmorphism visual design system to deliver live previews of agent payloads.",
+      "Tech stack: Next.js 15, TypeScript, Solana (Web3.js, Anchor, SPL Token), Helius RPC, Convex (Real-time DB & File Storage), Tailwind CSS, Framer Motion."
     ]
   },
   {
