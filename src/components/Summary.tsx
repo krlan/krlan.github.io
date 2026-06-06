@@ -6,7 +6,7 @@ const Summary: React.FC = () => {
   return (
     <Section title="Summary">
       <motion.p 
-        className="text-neutral-400 leading-relaxed text-sm"
+        className="text-[var(--text-muted)] leading-relaxed text-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
