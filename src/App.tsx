@@ -296,7 +296,7 @@ function App() {
 
   // 7. ATS CLASSIC LAYOUT (Standard Printable Grayscale Paper)
   const renderATSClassic = () => (
-    <div className="max-w-3xl mx-auto flex flex-col gap-1.5 py-1 px-1">
+    <div className="max-w-3xl mx-auto flex flex-col gap-2 py-1 px-1">
       <Header />
       <Skills />
       <Experience />
