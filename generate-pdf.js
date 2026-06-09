@@ -9,7 +9,7 @@ const generatePDF = async () => {
   await page.setViewport({ width: 1200, height: 1600 });
   
   console.log('Loading CV...');
-  await page.goto('http://localhost:5173/?theme=ats-classic', { 
+  await page.goto('http://localhost:5173/', { 
     waitUntil: 'networkidle0',
     timeout: 30000 
   });
@@ -22,6 +22,7 @@ const generatePDF = async () => {
     path: 'Igor_Trefilov_CV.pdf',
     format: 'A4',
     printBackground: true,
+    scale: 0.8,
     margin: {
       top: '20px',
       right: '20px',

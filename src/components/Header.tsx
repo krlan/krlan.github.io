@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Header: React.FC = () => {
   return (
     <motion.header 
-      className="mb-5"
+      className="mb-3"
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}

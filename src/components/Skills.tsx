@@ -33,7 +33,7 @@ const skillsData = [
 const Skills: React.FC = () => {
   return (
     <Section title="Skills">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2">
         {skillsData.map((skill, index) => (
           <SkillCategory 
             key={index} 

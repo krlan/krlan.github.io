@@ -1,23 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --border: #e5e7eb;
-  --text: #111827;
-  --text-muted: #4b5563;
-  --accent: #2563eb;
-  --accent-dim: #1d4ed8;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Inter', sans-serif;
-}
-
-/* 1. Theme: Original CV (Dark Green) */
-.theme-original {
   --bg: #0c0c0c;
   --surface: #141414;
   --border: #1f1f1f;
@@ -28,256 +15,6 @@
   --font-sans: 'Inter', sans-serif;
   --font-display: 'JetBrains Mono', monospace;
 }
-
-.theme-original body {
-  background-color: var(--bg);
-}
-
-.theme-original .section-title {
-  font-family: 'JetBrains Mono', monospace !important;
-  color: var(--text-muted) !important;
-}
-
-.theme-original .skills-category h4 {
-  font-family: 'JetBrains Mono', monospace !important;
-}
-
-.theme-original .experience-entry h3 {
-  color: #ffffff !important;
-}
-
-/* 2. Theme: Anthropic (Cream Sand) */
-.theme-anthropic {
-  --bg: #fbfaf7;
-  --surface: #f7f3eb;
-  --border: #e8e2d5;
-  --text: #191919;
-  --text-muted: #66625b;
-  --accent: #e05c3e;
-  --accent-dim: #b24025;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Playfair Display', serif;
-}
-
-.theme-anthropic body {
-  background-color: var(--bg);
-}
-
-.theme-anthropic .section-title {
-  font-family: 'Playfair Display', serif !important;
-  text-transform: none !important;
-  font-size: 1.25rem !important;
-  font-weight: 700 !important;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 0.25rem;
-  color: var(--text) !important;
-}
-
-.theme-anthropic .experience-entry h3 {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1.1rem !important;
-  color: var(--text) !important;
-}
-
-/* 3. Theme: OpenAI (Premium Dark Homepage) */
-.theme-openai {
-  --bg: #000000;
-  --surface: #101011;
-  --border: #1f1f21;
-  --text: #ffffff;
-  --text-muted: #8e8e93;
-  --accent: #ffffff;
-  --accent-dim: #d1d1d6;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Inter', sans-serif;
-}
-
-.theme-openai body {
-  background-color: var(--bg);
-  background-image: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
-}
-
-.theme-openai .section-title {
-  font-family: 'Inter', sans-serif !important;
-  text-transform: uppercase !important;
-  font-size: 0.75rem !important;
-  letter-spacing: 0.08em !important;
-  font-weight: 700 !important;
-  color: var(--text) !important;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem;
-}
-
-.theme-openai .experience-entry h3 {
-  color: #ffffff !important;
-}
-
-
-
-/* 7. Theme: ATS Classic (Standard Printable Grayscale Paper) */
-.theme-ats-classic {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --border: #d1d5db;
-  --text: #111827;
-  --text-muted: #374151;
-  --accent: #111827;
-  --accent-dim: #374151;
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Inter', sans-serif;
-}
-
-.theme-ats-classic body {
-  background-color: var(--bg);
-}
-
-.theme-ats-classic header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  border-bottom: 2px solid #111827;
-  padding-bottom: 0.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.theme-ats-classic header h1 {
-  font-size: 1.4rem !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.02em !important;
-  color: #111827 !important;
-  margin-bottom: 0.1rem !important;
-  line-height: 1.1 !important;
-}
-
-.theme-ats-classic header p {
-  font-size: 0.78rem !important;
-  color: #374151 !important;
-  font-weight: 500;
-  margin-bottom: 0.15rem !important;
-}
-
-.theme-ats-classic header .status-badge,
-.theme-ats-classic header .stats-bar {
-  display: none !important;
-}
-
-.theme-ats-classic header .contact-info {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  font-family: 'Inter', sans-serif !important;
-  font-size: 0.68rem !important;
-  color: #374151 !important;
-  flex-wrap: wrap;
-}
-
-.theme-ats-classic header .contact-info a {
-  color: #374151 !important;
-  text-decoration: underline !important;
-}
-
-.theme-ats-classic .section-title {
-  font-family: 'Inter', sans-serif !important;
-  text-transform: uppercase !important;
-  font-size: 0.7rem !important;
-  font-weight: 700 !important;
-  border-bottom: 1px solid #111827;
-  padding-bottom: 0.05rem;
-  color: #111827 !important;
-  margin-top: 0.45rem !important;
-  margin-bottom: 0.25rem !important;
-  letter-spacing: 0.05em !important;
-}
-
-.theme-ats-classic .experience-entry,
-.theme-ats-classic .education-entry {
-  position: relative;
-  border-bottom: none !important;
-  padding-bottom: 0px !important;
-  margin-bottom: 0.35rem !important;
-}
-
-.theme-ats-classic .experience-entry h3,
-.theme-ats-classic .education-entry h3 {
-  font-family: 'Inter', sans-serif !important;
-  font-size: 0.72rem !important;
-  font-weight: 600 !important;
-  color: #111827 !important;
-  padding-right: 150px; /* Make space for dates */
-  line-height: 1.15 !important;
-}
-
-.theme-ats-classic .experience-entry h3 strong,
-.theme-ats-classic .education-entry h3 strong {
-  font-weight: 700 !important;
-}
-
-.theme-ats-classic .experience-entry h3 a {
-  color: #111827 !important;
-  text-decoration: none !important;
-}
-
-.theme-ats-classic .experience-entry h3 a:hover {
-  text-decoration: underline !important;
-}
-
-.theme-ats-classic .experience-entry .details,
-.theme-ats-classic .education-entry .details {
-  position: absolute;
-  right: 0;
-  top: 1px;
-  margin: 0 !important;
-  font-size: 0.68rem !important;
-  color: #374151 !important;
-  font-family: 'Inter', sans-serif !important;
-  font-weight: 500;
-}
-
-.theme-ats-classic .experience-entry ul {
-  margin-top: 0.2rem !important;
-}
-
-.theme-ats-classic .experience-entry li {
-  font-size: 0.66rem !important;
-  color: #374151 !important;
-  line-height: 1.3 !important;
-  margin-top: 0.1rem !important;
-  margin-bottom: 0 !important;
-}
-
-.theme-ats-classic .experience-entry li::before {
-  content: '•' !important;
-  color: #111827 !important;
-  font-weight: normal !important;
-}
-
-.theme-ats-classic .education-entry p:not(.details) {
-  font-size: 0.66rem !important;
-  color: #374151 !important;
-  line-height: 1.3 !important;
-  margin-top: 0.2rem !important;
-}
-
-.theme-ats-classic .skills-category {
-  padding-top: 0.1rem !important;
-  padding-bottom: 0.1rem !important;
-}
-
-.theme-ats-classic .skills-category h4 {
-  font-family: 'Inter', sans-serif !important;
-  color: #111827 !important;
-  font-size: 0.68rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 0.02rem !important;
-}
-
-.theme-ats-classic .skills-category p {
-  font-size: 0.66rem !important;
-  color: #374151 !important;
-  line-height: 1.3 !important;
-}
-
 
 body {
   font-family: var(--font-sans);
@@ -291,49 +28,77 @@ h1, h2, h3, h4 {
 }
 
 @media print {
+  :root {
+    --bg: #ffffff !important;
+    --surface: #ffffff !important;
+    --border: #e5e7eb !important;
+    --text: #111827 !important;
+    --text-muted: #4b5563 !important;
+    --accent: #166534 !important;
+    --accent-dim: #14532d !important;
+  }
+  
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     background: white !important;
     color: #111827 !important;
   }
+
+  .experience-entry h3,
+  .education-entry h3 {
+    color: #111827 !important;
+  }
+
   .no-print { display: none !important; }
 }
 
 @layer components {
   .section-title {
-    @apply text-xs font-bold mb-4 mt-8 uppercase tracking-wider;
-    font-family: var(--font-display);
-    color: var(--text-muted);
+    @apply text-xs font-bold mb-1 mt-4 uppercase tracking-wider;
+    font-family: var(--font-display) !important;
+    color: var(--text-muted) !important;
   }
   
-  .experience-entry {
-    @apply mb-5 pb-5;
+  .experience-entry,
+  .education-entry {
+    position: relative;
+    @apply mb-2 pb-2;
     border-bottom: 1px dashed var(--border);
   }
-  .experience-entry:last-child {
+  .experience-entry:last-child,
+  .education-entry:last-child {
     border-bottom: none;
     @apply pb-0 mb-0;
   }
   
-  .experience-entry h3 {
-    @apply text-sm font-bold;
-    color: var(--text);
+  .experience-entry h3,
+  .education-entry h3 {
+    @apply text-[13px] font-bold;
+    color: #ffffff !important;
+    padding-right: 150px;
+    line-height: 1.2 !important;
   }
   
-  .experience-entry .details {
-    @apply text-xs mb-1.5 font-mono;
+  .experience-entry .details,
+  .education-entry .details {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    margin: 0 !important;
+    @apply text-[11px] font-mono;
     color: var(--text-muted);
   }
   
   .experience-entry ul {
-    @apply text-sm space-y-1 mt-2.5;
+    @apply text-xs space-y-0.5 mt-1;
     list-style: none;
     color: var(--text-muted);
   }
   
   .experience-entry li {
-    @apply pl-4 relative leading-relaxed;
+    @apply pl-3.5 relative;
+    line-height: 1.25 !important;
   }
   .experience-entry li::before {
     content: '›';
@@ -344,17 +109,18 @@ h1, h2, h3, h4 {
   }
   
   .skills-category {
-    @apply py-1.5;
+    @apply py-0.5;
   }
   
   .skills-category h4 {
-    @apply text-xs font-bold mb-1 uppercase tracking-wide;
-    font-family: var(--font-display);
+    @apply text-[11px] font-bold mb-0.5 uppercase tracking-wide;
+    font-family: var(--font-display) !important;
     color: var(--accent);
   }
   
   .skills-category p {
-    @apply text-xs leading-relaxed;
+    @apply text-[11px];
+    line-height: 1.25 !important;
     color: var(--text-muted);
   }
   
