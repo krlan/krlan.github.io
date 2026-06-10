@@ -3,284 +3,171 @@ import React from 'react';
 function App() {
   return (
     <div className="resume-container">
-      {/* ═══════════ PAGE 1 ═══════════ */}
-      <section className="resume-page">
-        <div className="header">
+      <div className="resume-page">
+        {/* HEADER */}
+        <header className="header">
           <div>
             <div className="name serif">Igor Trefilov</div>
           </div>
           <div className="contact">
-            <span className="role">AI &amp; Blockchain Systems Architect</span>
+            <span className="role">AI &amp; Blockchain builder who ships</span>
             <br />
+            <span className="loc">Remote</span>
+            <span className="sep">·</span>
+            <a href="mailto:i@sigma.club">i@sigma.club</a>
+            <span className="sep">·</span>
             <a href="https://github.com/krlan" target="_blank" rel="noopener noreferrer">github.com/krlan</a>
             <span className="sep">·</span>
             <a href="https://x.com/trefeelove" target="_blank" rel="noopener noreferrer">x.com/trefeelove</a>
             <span className="sep">·</span>
-            <a href="mailto:i@sigma.club">i@sigma.club</a>
-            <span className="sep">·</span>
-            <span className="loc">St. Petersburg, Russia</span>
+            <a href="https://leverbrain.com" target="_blank" rel="noopener noreferrer">leverbrain.com</a>
           </div>
+        </header>
+
+        {/* STATS BAR */}
+        <div className="stats-bar font-mono">
+          <span><span className="highlight-val">6+</span> Years Crypto</span>
+          <span className="sep">·</span>
+          <span><span className="highlight-val">5+</span> Products Shipped</span>
+          <span className="sep">·</span>
+          <span className="status-badge">open to work</span>
         </div>
 
-        {/* Four strongest numeric badges */}
-        <div className="metrics">
-          <div className="metric">
-            <span className="metric-value serif">6<span className="unit">yrs</span></span>
-            <span className="metric-label">building blockchain &amp; DeFi systems</span>
-          </div>
-          <div className="metric">
-            <span className="metric-value serif">$50k</span>
-            <span className="metric-label">NFT launch profit in 7 days</span>
-          </div>
-          <div className="metric">
-            <span className="metric-value serif">50k+</span>
-            <span className="metric-label">consumers served on FinTech platform</span>
-          </div>
-          <div className="metric">
-            <span className="metric-value serif">40%</span>
-            <span className="metric-label">user session retention increase</span>
-          </div>
-        </div>
-
-        <section>
-          <div className="section-title">Summary</div>
-          <div className="summary">
-            Self-taught systems architect who builds AI automation pipelines and decentralized protocols from zero. 6+ years of engineering experience across crypto, DeFi, and AI platforms. Strong first-principles execution: bringing complex software concepts to production in weeks, from smart contracts to real-time edge databases.
+        {/* SKILLS */}
+        <section className="skills-section">
+          <div className="section-title">Skills</div>
+          <div className="skills-grid">
+            <div className="skills-category">
+              <h4>Expert</h4>
+              <p>AI Automation (Voice AI, LLMs, RAG), TypeScript, React, Product Strategy, DeFi/Blockchain, Remote Leadership</p>
+            </div>
+            <div className="skills-category">
+              <h4>Proficient</h4>
+              <p>Python, Solidity, Node.js, Next.js, Supabase, n8n/Make.com, LangChain, OpenAI/Claude/Gemini APIs, Web3.js/Ethers.js</p>
+            </div>
+            <div className="skills-category">
+              <h4>AI/ML Stack</h4>
+              <p>OpenAI, Claude, Gemini APIs, Whisper, ElevenLabs, OpenRouter, Custom RAG Pipelines, Agentic Engineering</p>
+            </div>
+            <div className="skills-category">
+              <h4>Blockchain</h4>
+              <p>DeFi Protocols (Pendle, EigenLayer, NFTX), Smart Contracts (OpenZeppelin), NFTs (ERC-721, Metaplex)</p>
+            </div>
+            <div className="skills-category">
+              <h4>Languages</h4>
+              <p>English (Fluent), Russian (Native)</p>
+            </div>
+            <div className="skills-category">
+              <h4>Remote</h4>
+              <p>8+ Years Remote Work, Async Communication, 0→1 Product Building, Rapid Prototyping</p>
+            </div>
           </div>
         </section>
 
-        <section>
-          <div className="section-title">Experience<span className="sub">2016 - Present · AI agents, on-chain registries, yield strategies</span></div>
+        {/* EXPERIENCE */}
+        <section className="experience-section">
+          <div className="section-title">Experience</div>
 
-          {/* Timeline: three-step long-range arc */}
-          <div className="timeline">
-            <div className="tl-step">
-              <div className="tl-top"><div className="tl-year serif">2016</div><div className="tl-head">FinTech &amp; E-commerce</div></div>
-              <div className="tl-body">Managed financial software roadmaps and scaled digital sales operations.</div>
-            </div>
-            <div className="tl-step">
-              <div className="tl-top"><div className="tl-year serif">2019</div><div className="tl-head">DeFi &amp; Web3</div></div>
-              <div className="tl-body">Conducted protocol audits and designed custom yield restaking vaults.</div>
-            </div>
-            <div className="tl-step">
-              <div className="tl-top"><div className="tl-year serif">2023</div><div className="tl-head">AI Engineering</div></div>
-              <div className="tl-body">Pivoted platforms to voice AI agents, Convex Edge, and Solana programs.</div>
-            </div>
-          </div>
-
-          {/* Project block 1: LeverBrain */}
+          {/* Project 1 */}
           <div className="project">
             <div className="proj-head">
-              <span className="proj-name serif">LeverBrain</span>
+              <span className="proj-name serif">
+                <a href="https://leverbrain.com" target="_blank" rel="noopener noreferrer">LeverBrain</a>
+              </span>
               <span className="proj-kind">· Decentralized AI skill marketplace</span>
-              <span className="proj-role">founder &amp; ceo</span>
+              <span className="proj-role">Founder &amp; CEO</span>
+              <span className="proj-period font-mono">Jan 2024 – Present</span>
             </div>
-            <div className="proj-lines">
-              <div className="proj-row">
-                <div className="proj-label">Role</div>
-                <div className="proj-text">Founded 2024. Designed and deployed an on-chain licensing registry and purchasing access ledger to settle modular AI agent skill payloads.</div>
-              </div>
-              <div className="proj-row">
-                <div className="proj-label">Actions</div>
-                <div className="proj-text">Wrote Solana smart contracts in Anchor/Rust settling microtransactions in USDC; validated wallet signatures and Program Derived Addresses (PDAs) on the edge via Helius RPC nodes; built live capability card rendering in Convex.</div>
-              </div>
-              <div className="proj-row">
-                <div className="proj-label">Impact</div>
-                <div className="proj-text">Achieved <span className="hl">sub-50ms render times</span> for skill cards; settled all microtransactions directly on-chain; launched glassmorphism Next.js 15 operator UI.</div>
-              </div>
-            </div>
+            <ul className="proj-bullets">
+              <li>Pivoted LeverBrain into a decentralized high-fidelity marketplace for artificial intelligence (AI) agent skills and modular deployment blueprints.</li>
+              <li><strong>Solana Smart Contracts (Anchor/Rust):</strong> Designed and deployed the on-chain licensing registry and purchase access ledger, settling microtransactions in USDC using the Solana Program Library (SPL) Token program.</li>
+              <li><strong>Cryptographic Access Control:</strong> Engineered secure backend file delivery in Convex by validating Web3 wallet signatures and querying on-chain receipt Program Derived Addresses (PDAs) via Helius RPC nodes.</li>
+              <li><strong>Real-time Architecture (Convex):</strong> Built low-latency capability card rendering and metadata caching using Convex (DB &amp; Edge Functions) and Convex File Storage, achieving sub-50ms render times.</li>
+              <li><strong>Operator Experience:</strong> Developed a command-line interface (CLI) and Next.js 15 web application using a tactical glassmorphism visual design system to deliver live previews of agent payloads.</li>
+              <li><em>Tech stack:</em> Next.js 15, TypeScript, Solana (Web3.js, Anchor, SPL Token), Helius RPC, Convex (Real-time DB &amp; File Storage), Tailwind CSS, Framer Motion.</li>
+            </ul>
           </div>
 
-          {/* Project block 2: Sigma Club */}
+          {/* Project 2 */}
           <div className="project">
             <div className="proj-head">
-              <span className="proj-name serif">Sigma Club</span>
+              <span className="proj-name serif">
+                <a href="https://sigma.club" target="_blank" rel="noopener noreferrer">Sigma Club</a>
+              </span>
               <span className="proj-kind">· AI-powered learning platform</span>
-              <span className="proj-role">founder &amp; product lead</span>
+              <span className="proj-role">Founder &amp; Product Lead</span>
+              <span className="proj-period font-mono">Jun 2023 – Present</span>
             </div>
-            <div className="proj-lines">
-              <div className="proj-row">
-                <div className="proj-label">Role</div>
-                <div className="proj-text">Founded 2023. Engineered an AI-driven collaborative learning portal to foster personalized growth paths and interest matching within online communities.</div>
-              </div>
-              <div className="proj-row">
-                <div className="proj-label">Actions</div>
-                <div className="proj-text">Architected matching algorithms, knowledge gap analysis pipelines, and learning plans; integrated Google Gemini and Anthropic Claude APIs using React, TypeScript, and Supabase.</div>
-              </div>
-              <div className="proj-row">
-                <div className="proj-label">Impact</div>
-                <div className="proj-text">Delivered initial minimum viable product (MVP) in <span className="hl">under 4 weeks</span>; achieved a <span className="hl">40% increase</span> in user session retention.</div>
-              </div>
-            </div>
+            <ul className="proj-bullets">
+              <li>Designed and launched an AI-powered collaborative learning platform designed to foster personalized growth paths within communities.</li>
+              <li>Architected three core AI features—personalized learning paths, interest-based matching algorithms, and knowledge gap analysis pipelines—resulting in a <span className="hl">40% increase</span> in user session retention.</li>
+              <li>Implemented the full-stack codebase using React, TypeScript, and Supabase, integrating Google Gemini and Anthropic Claude APIs to ship the initial minimum viable product (MVP) in <span className="hl">under 4 weeks</span>.</li>
+              <li>Utilized modern developer tools and prompt engineering to accelerate the development lifecycle by 3x.</li>
+            </ul>
           </div>
 
-          {/* Project block 3: DeFi/Web3 Consulting */}
+          {/* Project 3 */}
           <div className="project">
             <div className="proj-head">
               <span className="proj-name serif">DeFi/Web3 Consulting</span>
               <span className="proj-kind">· Protocol audits &amp; yield strategies</span>
-              <span className="proj-role">blockchain specialist</span>
+              <span className="proj-role">Blockchain Specialist</span>
+              <span className="proj-period font-mono">Jan 2019 – Present</span>
             </div>
-            <div className="proj-lines">
-              <div className="proj-row">
-                <div className="proj-label">Role</div>
-                <div className="proj-text">Consulted 2019-Present. Led smart contract audits, custom yield generation, and NFT launches on Ethereum and Solana.</div>
-              </div>
-              <div className="proj-row">
-                <div className="proj-label">Actions</div>
-                <div className="proj-text">Designed yield restaking vaults across Pendle Finance, EigenLayer, and NFTX; authored audited Solidity contracts with OpenZeppelin frameworks; built secure wallet-gated community verification.</div>
-              </div>
-              <div className="proj-row">
-                <div className="proj-label">Impact</div>
-                <div className="proj-text">Generated <span className="hl">$50k+ in profit within 7 days</span> by executing a custom NFT launch on FTX; managed private asset portfolio using audited vault protocols.</div>
-              </div>
+            <ul className="proj-bullets">
+              <li>Conducted deep protocol analysis and yield strategy execution in decentralized finance (DeFi), leading smart contract security audits and NFT launches.</li>
+              <li>Generated <span className="hl">$50k+ in profit within 7 days</span> by architecting and executing the day-one launch of a custom NFT collection on the FTX marketplace.</li>
+              <li>Designed and deployed custom yield strategies across Pendle Finance, EigenLayer restaking protocols, and NFTX liquidity pools, managing a private asset portfolio.</li>
+              <li>Authored and deployed audited Ethereum smart contracts using Solidity and OpenZeppelin frameworks, and developed Solana minting protocols following the Metaplex standard.</li>
+              <li>Built secure NFT-gated community platforms featuring Web3 wallet authentication, real-time on-chain data fetching, and automated membership verification.</li>
+            </ul>
+          </div>
+
+          {/* Project 4 */}
+          <div className="project">
+            <div className="proj-head">
+              <span className="proj-name serif">E-commerce Business</span>
+              <span className="proj-kind">· Digital utility store</span>
+              <span className="proj-role">Founder</span>
+              <span className="proj-period font-mono">Jan 2017 – Dec 2021</span>
             </div>
+            <ul className="proj-bullets">
+              <li>Founded and scaled a profitable e-commerce store selling specialized digital utility products to Amazon sellers, generating consistent monthly cash flow.</li>
+              <li>Directed all operations end-to-end, including digital product design, high-converting marketing funnels, automated customer support pipelines, and vendor relations.</li>
+              <li>Maintained profitability for 4 consecutive years, managing a solo operation before executing a strategic acquisition/pivot.</li>
+            </ul>
           </div>
-        </section>
-      </section>
 
-      {/* ═══════════ PAGE 2 ═══════════ */}
-      <section className="resume-page page-break">
-        <div className="section-title">Open Source &amp; Indie Work<span className="sub">2017 - Present · Developer tooling &amp; digital operations</span></div>
-
-        <div className="os-intro">
-          <span className="hl">First-principles builder.</span> Approach: prototype in public, automate database edge sessions, and write clean CLI tools. Cumulative reach: <span className="strong">320+ stars on GitHub · 4 profitable years in solo e-commerce</span>.
-        </div>
-
-        <div className="os-grid">
-          <div className="os-item">
-            <span className="os-name serif"><a href="https://leverbrain.com" target="_blank" rel="noopener noreferrer">E-commerce Digital</a></span>
-            <span className="os-desc">Digital utility store · marketing funnels · solo operator</span>
-            <span className="os-star big">★ 4 yrs</span>
-          </div>
-          <div className="os-item">
-            <span className="os-name serif">FinTech Platform</span>
-            <span className="os-desc">PM &amp; frontend coder · loan comparison engine</span>
-            <span className="os-star big">★ 50k+ users</span>
-          </div>
-          <div className="os-item">
-            <span className="os-name serif">solana-convex-boilerplate</span>
-            <span className="os-desc">TypeScript · wallet access signatures for Convex edge DB</span>
-            <span className="os-star">★ 48</span>
-          </div>
-          <div className="os-item">
-            <span className="os-name serif">anchor-usdc-licensing</span>
-            <span className="os-desc">Rust/Solana · SPL token purchase registry and receipt PDAs</span>
-            <span className="os-star">★ 35</span>
-          </div>
-        </div>
-
-        <div className="os-highlight">
-          <span className="tag">Solana</span>Published an open-source Anchor blueprint for SPL-token licensing programs. The repository was starred by developers and integrated by three early-stage AI agent marketplaces.
-        </div>
-
-        <section>
-          <div className="section-title">Judgment &amp; Conviction</div>
-          <div className="convictions">
-            <div className="conv-card">
-              <div className="conv-head"><span className="year">2019</span>Online restaking vaults</div>
-              <div className="conv-body">
-                Committed private assets to EigenLayer and Pendle restaking protocols before mainstream adoption. Validated the restaking yield yield thesis, resulting in double-digit APY.
-              </div>
+          {/* Project 5 */}
+          <div className="project">
+            <div className="proj-head">
+              <span className="proj-name serif">FinTech Platform</span>
+              <span className="proj-kind">· Loan comparison engine</span>
+              <span className="proj-role">Product Manager</span>
+              <span className="proj-period font-mono">Mar 2016 – Nov 2017</span>
             </div>
-            <div className="conv-card">
-              <div className="conv-head"><span className="year">2023</span>AI Agent Skills pivot</div>
-              <div className="conv-body">
-                Recognized that LLMs would evolve from chatbots into autonomous agentic workflows. Shifted focus from simple prompts to developing marketplace blueprints.
-              </div>
-            </div>
-            <div className="conv-card">
-              <div className="conv-head"><span className="year">2024</span>Zero-trust Edge database</div>
-              <div className="conv-body">
-                Implemented cryptographic signature verification in serverless edge functions over traditional database sessions, reducing transaction verification latencies by 80%.
-              </div>
-            </div>
+            <ul className="proj-bullets">
+              <li>Managed product roadmap and contributed frontend code for a financial technology (FinTech) loan comparison platform serving over 50,000 US consumers.</li>
+              <li>Coordinated sprint planning, backlog grooming, and remote team workflows across 3 continents using Agile methodologies.</li>
+              <li>Established high-performance remote communication protocols, building a foundation for 8+ years of successful distributed engineering execution.</li>
+            </ul>
           </div>
         </section>
 
-        <section>
-          <div className="section-title">Public Impact</div>
-
-          <div className="handle-strip">
-            <span className="handle serif">LeverBrain · <a href="https://leverbrain.com/blog" target="_blank" rel="noopener noreferrer">leverbrain.com/blog</a></span>
-            <span className="follower">12k+ unique reads</span>
-            <span className="desc">Technical guides on Solana smart contract security and building low-latency edge caching with Convex and Helius.</span>
-          </div>
-
-          <div className="impact-grid">
-            <div>
-              <div className="inf-block-title">Selected writing</div>
-              <div className="art-row">
-                <div className="art-header">
-                  <a className="art-title" href="https://leverbrain.com/blog" target="_blank" rel="noopener noreferrer">First-Principles AI Agent Orchestration</a>
-                  <span className="art-date">2024.03</span>
-                </div>
-                <div className="art-stats">Shared on X, <span className="em-brand">8k+</span> views; highlighted modular agent deployment.</div>
-              </div>
-              <div className="art-row">
-                <div className="art-header">
-                  <a className="art-title" href="https://leverbrain.com/blog" target="_blank" rel="noopener noreferrer">Smart Contract Auditing for High-yield Protocols</a>
-                  <span className="art-date">2021.10</span>
-                </div>
-                <div className="art-stats">DeFi research, <span className="em-brand">4k+</span> views on decentralized finance boards.</div>
-              </div>
-            </div>
-
-            <div>
-              <div className="inf-block-title">Invited talks</div>
-              <div className="talk-row">
-                <div>
-                  <div className="talk-title">Building AI marketplaces on Solana</div>
-                  <div className="talk-venue">Web3 Builder Space · 2024</div>
-                </div>
-                <div className="talk-date">2024.09</div>
-              </div>
-              <div className="talk-row">
-                <div>
-                  <div className="talk-title">DeFi Liquidity and Restaking Strategies</div>
-                  <div className="talk-venue">DeFi Summit · Online</div>
-                </div>
-                <div className="talk-date">2022.05</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div className="section-title">Core Skills</div>
-          <div className="skill-row">
-            <div className="skill-label">AI Automation</div>
-            <div className="skill-body">Voice AI, RAG pipelines, OpenAI/Claude/Gemini APIs, <span className="em-brand">agentic engineering</span>.</div>
-          </div>
-          <div className="skill-row">
-            <div className="skill-label">Web3 &amp; Solidity</div>
-            <div className="skill-body">Solidity smart contracts, Anchor/Rust, Metaplex, <span className="em-brand">DeFi restaking</span> (Pendle, EigenLayer).</div>
-          </div>
-          <div className="skill-row">
-            <div className="skill-label">Full-Stack Dev</div>
-            <div className="skill-body">TypeScript, React, Next.js 15, Node.js, <span className="em-brand">Convex database</span>, Supabase.</div>
-          </div>
-          <div className="skill-row">
-            <div className="skill-label">Product Strategy</div>
-            <div className="skill-body">0→1 MVP delivery in weeks, Agile roadmaps, <span className="em-brand">high-conversion marketing funnels</span>.</div>
-          </div>
-          <div className="skill-row">
-            <div className="skill-label">Remote Leadership</div>
-            <div className="skill-body">8+ years distributed async collaboration, <span className="em-brand">command-line developer tooling</span>.</div>
-          </div>
-        </section>
-
-        <section className="no-break">
+        {/* EDUCATION */}
+        <section className="education-section">
           <div className="section-title">Education</div>
           <div className="edu-row">
             <div>
               <span className="school serif">Higher School of Economics</span>
-              <span className="major"> · Saint-Petersburg, Russia · Bachelor of Science in Economics · <span className="em-brand">Declined quant finance grad school</span> to build digital businesses.</span>
+              <span className="major">
+                · Saint-Petersburg, Russia · Bachelor of Science in Economics · Focused on quantitative analysis and financial modeling. Deepened in web development and software engineering during studies, pursuing building independent products from zero.
+              </span>
             </div>
-            <div className="date">2012 - 2016</div>
+            <div className="date font-mono">Sep 2012 – Jun 2016</div>
           </div>
         </section>
-      </section>
+      </div>
     </div>
   );
 }
