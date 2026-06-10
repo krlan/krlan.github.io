@@ -29,25 +29,58 @@
 
 html, body { background: var(--parchment); }
 
-@media screen {
-  body {
-    max-width: 210mm;
-    margin: 20px auto;
-    padding: 11mm 13mm;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
-    border-radius: 8px;
-    border: 1px solid var(--border-soft);
-  }
-}
-
 body {
   color: var(--near-black);
   font-family: var(--serif);
-  font-size: 9.4pt;
-  line-height: 1.42;
+  font-size: 9.2pt;
+  line-height: 1.40;
   letter-spacing: 0;
   widows: 3;
   orphans: 3;
+}
+
+.resume-container {
+  max-width: 210mm;
+  margin: 0 auto;
+}
+
+.resume-page {
+  background: var(--parchment);
+  min-height: 297mm;
+}
+
+@media screen {
+  .resume-container {
+    margin: 20px auto;
+  }
+  .resume-page {
+    padding: 11mm 13mm;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    position: relative;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: #f5f4ed !important;
+  }
+  .resume-page {
+    min-height: auto;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .page-break {
+    break-before: page;
+  }
 }
 
 .serif { font-family: var(--serif); }
@@ -131,6 +164,7 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0.5px;
 }
 section:first-of-type .section-title { margin-top: 0; }
+.page-break .section-title { margin-top: 0; }
 
 /* SKILLS */
 .skills-grid {
@@ -266,125 +300,4 @@ section:first-of-type .section-title { margin-top: 0; }
 .hl {
   color: var(--brand);
   font-weight: 500;
-}
-
-/* ═══════════ PRINT COMPRESSION OVERRIDES ═══════════ */
-@media print {
-  @page {
-    size: A4;
-    margin: 6mm 10mm 6mm 10mm;
-    background: #f5f4ed;
-  }
-
-  body {
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    font-size: 8.2pt;
-    line-height: 1.25;
-    background: #f5f4ed !important;
-  }
-
-  .header {
-    margin-bottom: 1.5mm;
-    border-left-width: 2pt;
-    padding-left: 6pt;
-  }
-
-  .name {
-    font-size: 20pt;
-  }
-
-  .contact {
-    font-size: 8pt;
-    line-height: 1.3;
-  }
-
-  .contact .role {
-    font-size: 9pt;
-  }
-
-  .stats-bar {
-    font-size: 7.8pt;
-    margin-bottom: 1.5mm;
-    padding-left: 8pt;
-    gap: 2.5mm;
-  }
-
-  .stats-bar .status-badge {
-    font-size: 7.2pt;
-  }
-
-  .section-title {
-    font-size: 10.5pt;
-    border-left-width: 2pt;
-    padding-left: 6pt;
-    margin: 2.5mm 0 1mm 0;
-  }
-
-  .skills-grid {
-    gap: 1.2mm 4mm;
-    padding-left: 8pt;
-  }
-
-  .skills-category h4 {
-    font-size: 8.2pt;
-    margin-bottom: 0.2mm;
-  }
-
-  .skills-category p {
-    font-size: 7.8pt;
-    line-height: 1.2;
-  }
-
-  .project {
-    padding: 0.8mm 0;
-    padding-left: 8pt;
-  }
-
-  .proj-head {
-    margin-bottom: 0.2mm;
-  }
-
-  .proj-name {
-    font-size: 9.5pt;
-  }
-
-  .proj-kind {
-    font-size: 9pt;
-  }
-
-  .proj-role {
-    font-size: 8pt;
-  }
-
-  .proj-period {
-    font-size: 8pt;
-  }
-
-  .proj-bullets li {
-    font-size: 7.8pt;
-    line-height: 1.22;
-    margin-bottom: 0.2mm;
-    padding-left: 8pt;
-  }
-
-  .edu-row {
-    padding: 0.8mm 0;
-    padding-left: 8pt;
-  }
-
-  .edu-row .school {
-    font-size: 9.5pt;
-  }
-
-  .edu-row .major {
-    font-size: 7.8pt;
-    line-height: 1.22;
-  }
-
-  .edu-row .date {
-    font-size: 8pt;
-  }
 }

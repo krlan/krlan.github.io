@@ -3,7 +3,8 @@ import React from 'react';
 function App() {
   return (
     <div className="resume-container">
-      <div className="resume-page">
+      {/* ═══════════ PAGE 1 ═══════════ */}
+      <section className="resume-page">
         {/* HEADER */}
         <header className="header">
           <div>
@@ -64,7 +65,7 @@ function App() {
           </div>
         </section>
 
-        {/* EXPERIENCE */}
+        {/* EXPERIENCE - PAGE 1 */}
         <section className="experience-section">
           <div className="section-title">Experience</div>
 
@@ -105,6 +106,14 @@ function App() {
               <li>Utilized modern developer tools and prompt engineering to accelerate the development lifecycle by 3x.</li>
             </ul>
           </div>
+        </section>
+      </section>
+
+      {/* ═══════════ PAGE 2 ═══════════ */}
+      <section className="resume-page page-break">
+        {/* EXPERIENCE - PAGE 2 */}
+        <section className="experience-section">
+          <div className="section-title">Experience (Continued)</div>
 
           {/* Project 3 */}
           <div className="project">
@@ -167,7 +176,7 @@ function App() {
             <div className="date font-mono">Sep 2012 – Jun 2016</div>
           </div>
         </section>
-      </div>
+      </section>
     </div>
   );
 }
