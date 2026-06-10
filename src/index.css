@@ -32,55 +32,11 @@ html, body { background: var(--parchment); }
 body {
   color: var(--near-black);
   font-family: var(--serif);
-  font-size: 9.2pt;
-  line-height: 1.40;
+  font-size: 9.4pt;
+  line-height: 1.42;
   letter-spacing: 0;
   widows: 3;
   orphans: 3;
-}
-
-.resume-container {
-  max-width: 210mm;
-  margin: 0 auto;
-}
-
-.resume-page {
-  background: var(--parchment);
-  min-height: 297mm;
-}
-
-@media screen {
-  .resume-container {
-    margin: 20px auto;
-  }
-  .resume-page {
-    padding: 11mm 13mm;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
-    border-radius: 4px;
-    border: 1px solid var(--border-soft);
-    position: relative;
-  }
-}
-
-@media print {
-  body {
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    background: #f5f4ed !important;
-  }
-  .resume-page {
-    min-height: auto;
-    box-shadow: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-  .page-break {
-    break-before: page;
-  }
 }
 
 .serif { font-family: var(--serif); }
@@ -88,6 +44,28 @@ body {
 
 a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+/* WEB RESUME PRESENTATION (SCREEN) */
+@media screen {
+  body {
+    padding: 40px 20px;
+    background: #eae8df; /* Slightly darker warm-gray background to elevate the parchment resume sheet */
+  }
+  .resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--parchment);
+    padding: 40px 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    border: 1px solid var(--border-soft);
+  }
+}
+
+/* HIDDEN PAGE BREAK FOR WEB (SCREEN) */
+.page-break {
+  display: none;
+}
 
 /* HEADER */
 .header {
@@ -164,7 +142,6 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0.5px;
 }
 section:first-of-type .section-title { margin-top: 0; }
-.page-break .section-title { margin-top: 0; }
 
 /* SKILLS */
 .skills-grid {
@@ -300,4 +277,41 @@ section:first-of-type .section-title { margin-top: 0; }
 .hl {
   color: var(--brand);
   font-weight: 500;
+}
+
+/* ═══════════ PRINT OVERRIDES ═══════════ */
+@media print {
+  @page {
+    size: A4;
+    margin: 11mm 13mm 11mm 13mm;
+    background: #f5f4ed;
+  }
+
+  body {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: #f5f4ed !important;
+    color: var(--near-black);
+  }
+
+  .resume-container {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+  }
+
+  /* ACTIVATE PAGE BREAK FOR PRINT */
+  .page-break {
+    display: block;
+    break-before: page;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
 }
