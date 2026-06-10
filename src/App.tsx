@@ -5,21 +5,24 @@ function App() {
     <div className="resume-container">
       {/* HEADER */}
       <header className="header">
-        <div>
+        <div className="header-left">
           <div className="name serif">Igor Trefilov</div>
+          <div className="role">AI &amp; Blockchain builder who ships</div>
         </div>
         <div className="contact">
-          <span className="role">AI &amp; Blockchain builder who ships</span>
-          <br />
-          <span className="loc">Remote</span>
-          <span className="sep">·</span>
-          <a href="mailto:i@sigma.club">i@sigma.club</a>
-          <span className="sep">·</span>
-          <a href="https://github.com/krlan" target="_blank" rel="noopener noreferrer">github.com/krlan</a>
-          <span className="sep">·</span>
-          <a href="https://x.com/trefeelove" target="_blank" rel="noopener noreferrer">x.com/trefeelove</a>
-          <span className="sep">·</span>
-          <a href="https://leverbrain.com" target="_blank" rel="noopener noreferrer">leverbrain.com</a>
+          <div className="loc-line"><span className="loc">Remote</span></div>
+          <div className="contact-links">
+            <div>
+              <a href="mailto:i@sigma.club">i@sigma.club</a>
+              <span className="sep">·</span>
+              <a href="https://github.com/krlan" target="_blank" rel="noopener noreferrer">github.com/krlan</a>
+            </div>
+            <div className="contact-row-2">
+              <a href="https://x.com/trefeelove" target="_blank" rel="noopener noreferrer">x.com/trefeelove</a>
+              <span className="sep">·</span>
+              <a href="https://leverbrain.com" target="_blank" rel="noopener noreferrer">leverbrain.com</a>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -70,12 +73,16 @@ function App() {
         {/* Project 1 */}
         <div className="project">
           <div className="proj-head">
-            <span className="proj-name serif">
-              <a href="https://leverbrain.com" target="_blank" rel="noopener noreferrer">LeverBrain</a>
-            </span>
-            <span className="proj-kind">· Decentralized AI skill marketplace</span>
-            <span className="proj-role">Founder &amp; CEO</span>
-            <span className="proj-period font-mono">Jan 2024 – Present</span>
+            <div className="proj-title-block">
+              <span className="proj-name serif">
+                <a href="https://leverbrain.com" target="_blank" rel="noopener noreferrer">LeverBrain</a>
+              </span>
+              <span className="proj-kind">· Decentralized AI skill marketplace</span>
+            </div>
+            <div className="proj-meta-block">
+              <span className="proj-role">Founder &amp; CEO</span>
+              <span className="proj-period font-mono">Jan 2024 – Present</span>
+            </div>
           </div>
           <ul className="proj-bullets">
             <li>Pivoted LeverBrain into a decentralized high-fidelity marketplace for artificial intelligence (AI) agent skills and modular deployment blueprints.</li>
@@ -90,12 +97,16 @@ function App() {
         {/* Project 2 */}
         <div className="project">
           <div className="proj-head">
-            <span className="proj-name serif">
-              <a href="https://sigma.club" target="_blank" rel="noopener noreferrer">Sigma Club</a>
-            </span>
-            <span className="proj-kind">· AI-powered learning platform</span>
-            <span className="proj-role">Founder &amp; Product Lead</span>
-            <span className="proj-period font-mono">Jun 2023 – Present</span>
+            <div className="proj-title-block">
+              <span className="proj-name serif">
+                <a href="https://sigma.club" target="_blank" rel="noopener noreferrer">Sigma Club</a>
+              </span>
+              <span className="proj-kind">· AI-powered learning platform</span>
+            </div>
+            <div className="proj-meta-block">
+              <span className="proj-role">Founder &amp; Product Lead</span>
+              <span className="proj-period font-mono">Jun 2023 – Present</span>
+            </div>
           </div>
           <ul className="proj-bullets">
             <li>Designed and launched an AI-powered collaborative learning platform designed to foster personalized growth paths within communities.</li>
@@ -111,10 +122,14 @@ function App() {
         {/* Project 3 */}
         <div className="project">
           <div className="proj-head">
-            <span className="proj-name serif">DeFi/Web3 Consulting</span>
-            <span className="proj-kind">· Protocol audits &amp; yield strategies</span>
-            <span className="proj-role">Blockchain Specialist</span>
-            <span className="proj-period font-mono">Jan 2019 – Present</span>
+            <div className="proj-title-block">
+              <span className="proj-name serif">DeFi/Web3 Consulting</span>
+              <span className="proj-kind">· Protocol audits &amp; yield strategies</span>
+            </div>
+            <div className="proj-meta-block">
+              <span className="proj-role">Blockchain Specialist</span>
+              <span className="proj-period font-mono">Jan 2019 – Present</span>
+            </div>
           </div>
           <ul className="proj-bullets">
             <li>Conducted deep protocol analysis and yield strategy execution in decentralized finance (DeFi), leading smart contract security audits and NFT launches.</li>
@@ -128,10 +143,14 @@ function App() {
         {/* Project 4 */}
         <div className="project">
           <div className="proj-head">
-            <span className="proj-name serif">E-commerce Business</span>
-            <span className="proj-kind">· Digital utility store</span>
-            <span className="proj-role">Founder</span>
-            <span className="proj-period font-mono">Jan 2017 – Dec 2021</span>
+            <div className="proj-title-block">
+              <span className="proj-name serif">E-commerce Business</span>
+              <span className="proj-kind">· Digital utility store</span>
+            </div>
+            <div className="proj-meta-block">
+              <span className="proj-role">Founder</span>
+              <span className="proj-period font-mono">Jan 2017 – Dec 2021</span>
+            </div>
           </div>
           <ul className="proj-bullets">
             <li>Founded and scaled a profitable e-commerce store selling specialized digital utility products to Amazon sellers, generating consistent monthly cash flow.</li>
@@ -143,10 +162,14 @@ function App() {
         {/* Project 5 */}
         <div className="project">
           <div className="proj-head">
-            <span className="proj-name serif">FinTech Platform</span>
-            <span className="proj-kind">· Loan comparison engine</span>
-            <span className="proj-role">Product Manager</span>
-            <span className="proj-period font-mono">Mar 2016 – Nov 2017</span>
+            <div className="proj-title-block">
+              <span className="proj-name serif">FinTech Platform</span>
+              <span className="proj-kind">· Loan comparison engine</span>
+            </div>
+            <div className="proj-meta-block">
+              <span className="proj-role">Product Manager</span>
+              <span className="proj-period font-mono">Mar 2016 – Nov 2017</span>
+            </div>
           </div>
           <ul className="proj-bullets">
             <li>Managed product roadmap and contributed frontend code for a financial technology (FinTech) loan comparison platform serving over 50,000 US consumers.</li>
@@ -160,13 +183,16 @@ function App() {
       <section className="education-section">
         <div className="section-title">Education</div>
         <div className="edu-row">
-          <div>
-            <span className="school serif">Higher School of Economics</span>
-            <span className="major">
-              · Saint-Petersburg, Russia · Bachelor of Science in Economics · Focused on quantitative analysis and financial modeling. Deepened in web development and software engineering during studies, pursuing building independent products from zero.
-            </span>
+          <div className="edu-head">
+            <div>
+              <span className="school serif">Higher School of Economics</span>
+              <span className="major">· Russia · BSc Economics</span>
+            </div>
+            <span className="date font-mono">Sep 2012 – Jun 2016</span>
           </div>
-          <div className="date font-mono">Sep 2012 – Jun 2016</div>
+          <p className="edu-desc">
+            Focused on quantitative analysis and financial modeling. Deepened in web development and software engineering during studies, pursuing building independent products from zero.
+          </p>
         </div>
       </section>
     </div>
