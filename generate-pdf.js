@@ -22,12 +22,12 @@ const generatePDF = async () => {
     path: 'Igor_Trefilov_CV.pdf',
     format: 'A4',
     printBackground: true,
-    scale: 0.8,
+    scale: 1.0,
     margin: {
-      top: '20px',
-      right: '20px',
-      bottom: '20px',
-      left: '20px'
+      top: '0px',
+      right: '0px',
+      bottom: '0px',
+      left: '0px'
     }
   });
   
