@@ -4,7 +4,7 @@
 
 @page {
   size: A4;
-  margin: 11mm 13mm 11mm 13mm;
+  margin: 15mm 18mm 15mm 18mm;
   background: #f5f4ed;
 }
 
@@ -32,9 +32,9 @@ html, body { background: var(--parchment); }
 body {
   color: var(--near-black);
   font-family: var(--serif);
-  font-size: 9.4pt;
-  line-height: 1.42;
-  letter-spacing: 0;
+  font-size: 10.5pt;
+  line-height: 1.48;
+  letter-spacing: -0.05px;
   widows: 3;
   orphans: 3;
 }
@@ -48,15 +48,15 @@ a:hover { text-decoration: underline; }
 /* WEB RESUME PRESENTATION (SCREEN) */
 @media screen {
   body {
-    padding: 40px 20px;
-    background: #eae8df; /* Slightly darker warm-gray background to elevate the parchment resume sheet */
+    padding: 50px 20px;
+    background: #eae8df;
   }
   .resume-container {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     background: var(--parchment);
-    padding: 40px 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    padding: 15mm 18mm;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
     border: 1px solid var(--border-soft);
   }
@@ -72,30 +72,31 @@ a:hover { text-decoration: underline; }
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 3mm;
-  border-left: 2.5pt solid var(--brand);
-  border-radius: 1.5pt;
-  padding-left: 8pt;
+  margin-bottom: 4mm;
+  border-left: 3pt solid var(--brand);
+  border-radius: 2pt;
+  padding-left: 10pt;
 }
 .header > div:first-child { flex-shrink: 0; }
 .name {
   font-family: var(--serif);
-  font-size: 26pt;
+  font-size: 32pt;
   font-weight: 500;
-  letter-spacing: -0.2pt;
+  letter-spacing: -0.4pt;
   color: var(--near-black);
   line-height: 1;
 }
 .contact {
   text-align: right;
-  font-size: 9pt;
+  font-size: 10.5pt;
   color: var(--stone);
   line-height: 1.5;
 }
 .contact .role {
   color: var(--brand);
-  font-size: 10.5pt;
+  font-size: 12pt;
   font-weight: 500;
+  letter-spacing: -0.1px;
 }
 .contact .sep { color: var(--border); margin: 0 0.4em; }
 .contact a { color: var(--dark-warm); }
@@ -105,12 +106,12 @@ a:hover { text-decoration: underline; }
 .stats-bar {
   display: flex;
   align-items: center;
-  gap: 3.5mm;
+  gap: 4.5mm;
   font-family: var(--mono);
-  font-size: 8.5pt;
+  font-size: 9.5pt;
   color: var(--stone);
-  margin-bottom: 3mm;
-  padding-left: 10.5pt;
+  margin-bottom: 4mm;
+  padding-left: 13pt;
 }
 .stats-bar .sep { color: var(--border-soft); }
 .stats-bar .highlight-val {
@@ -120,26 +121,26 @@ a:hover { text-decoration: underline; }
 .stats-bar .status-badge {
   background: var(--brand-tint);
   color: var(--brand);
-  font-size: 8pt;
+  font-size: 9pt;
   font-weight: 600;
-  padding: 0.2mm 1.5mm;
-  border-radius: 2pt;
+  padding: 0.3mm 1.8mm;
+  border-radius: 2.5pt;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
 }
 
 /* SECTION TITLE */
 .section-title {
   font-family: var(--serif);
-  font-size: 13pt;
+  font-size: 15pt;
   font-weight: 500;
   color: var(--near-black);
-  border-left: 2.5pt solid var(--brand);
-  border-radius: 1.5pt;
-  padding: 0 0 0 8pt;
-  margin: 5mm 0 2mm 0;
+  border-left: 3pt solid var(--brand);
+  border-radius: 2pt;
+  padding: 0 0 0 10pt;
+  margin: 7mm 0 3mm 0;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 section:first-of-type .section-title { margin-top: 0; }
 
@@ -147,25 +148,25 @@ section:first-of-type .section-title { margin-top: 0; }
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3mm 6mm;
-  padding-left: 10.5pt;
-  margin-bottom: 2mm;
+  gap: 4mm 8mm;
+  padding-left: 13pt;
+  margin-bottom: 3mm;
 }
 .skills-category {
   break-inside: avoid;
 }
 .skills-category h4 {
-  font-size: 9pt;
+  font-size: 10.5pt;
   font-weight: 600;
   color: var(--brand);
   text-transform: uppercase;
-  letter-spacing: 0.3px;
-  margin-bottom: 0.5mm;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.8mm;
 }
 .skills-category p {
-  font-size: 8.8pt;
+  font-size: 10pt;
   color: var(--olive);
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 /* EXPERIENCE & PROJECTS */
@@ -174,41 +175,47 @@ section:first-of-type .section-title { margin-top: 0; }
   flex-direction: column;
 }
 .project {
-  padding: 1.6mm 0;
-  border-top: 0.4pt solid var(--border-soft);
+  padding: 2.5mm 0;
+  border-top: 0.5pt solid var(--border-soft);
   break-inside: avoid;
-  padding-left: 10.5pt;
+  padding-left: 13pt;
 }
 .project:first-of-type {
-  border-top: 0.4pt solid var(--border);
-  padding-top: 1.6mm;
+  border-top: 0.5pt solid var(--border);
+  padding-top: 2.5mm;
 }
 .proj-head {
   display: flex;
   align-items: baseline;
-  gap: 1.5mm;
-  margin-bottom: 0.9mm;
+  gap: 2mm;
+  margin-bottom: 1.2mm;
   flex-wrap: wrap;
 }
 .proj-name {
   font-family: var(--serif);
-  font-size: 11pt;
+  font-size: 13pt;
   font-weight: 500;
   color: var(--near-black);
 }
 .proj-name a { color: var(--near-black); }
 .proj-name a:hover { text-decoration: underline; }
 .proj-kind {
-  font-size: 10.5pt;
+  font-size: 12pt;
   color: var(--olive);
 }
 .proj-role {
-  font-size: 8.8pt;
+  font-size: 9pt;
   color: var(--brand);
   font-weight: 500;
+  background: var(--brand-tint);
+  padding: 0.4mm 1.8mm;
+  border-radius: 2pt;
+  letter-spacing: 0.3pt;
+  text-transform: uppercase;
+  margin-left: 1mm;
 }
 .proj-period {
-  font-size: 8.8pt;
+  font-size: 10pt;
   color: var(--stone);
   margin-left: auto;
   font-variant-numeric: tabular-nums;
@@ -219,11 +226,11 @@ section:first-of-type .section-title { margin-top: 0; }
 }
 .proj-bullets li {
   position: relative;
-  padding-left: 10pt;
-  font-size: 9.2pt;
+  padding-left: 12pt;
+  font-size: 10.2pt;
   color: var(--dark-warm);
-  line-height: 1.4;
-  margin-bottom: 0.6mm;
+  line-height: 1.48;
+  margin-bottom: 0.8mm;
 }
 .proj-bullets li:last-child {
   margin-bottom: 0;
@@ -253,23 +260,23 @@ section:first-of-type .section-title { margin-top: 0; }
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 1.6mm 0;
-  padding-left: 10.5pt;
+  padding: 2.5mm 0;
+  padding-left: 13pt;
 }
 .edu-row .school {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 11pt;
+  font-size: 13pt;
 }
 .edu-row .major {
   color: var(--olive);
-  font-size: 9.4pt;
-  line-height: 1.4;
+  font-size: 10.5pt;
+  line-height: 1.48;
 }
 .edu-row .date {
   color: var(--stone);
   font-variant-numeric: tabular-nums;
-  font-size: 8.8pt;
+  font-size: 10pt;
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -283,7 +290,7 @@ section:first-of-type .section-title { margin-top: 0; }
 @media print {
   @page {
     size: A4;
-    margin: 11mm 13mm 11mm 13mm;
+    margin: 15mm 18mm 15mm 18mm;
     background: #f5f4ed;
   }
 
