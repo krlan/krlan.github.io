@@ -7,7 +7,6 @@ function App() {
       <header className="header">
         <div className="header-left">
           <div className="name serif">Igor Trefilov</div>
-          <div className="role">AI &amp; Blockchain builder who ships</div>
         </div>
         <div className="contact">
           <div className="loc-line"><span className="loc">Remote</span></div>
