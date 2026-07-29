@@ -17,9 +17,8 @@ const generatePDF = async () => {
   // Wait for animations to complete
   await new Promise(resolve => setTimeout(resolve, 2000));
   
-  console.log('Generating PDF...');
-  await page.pdf({
-    path: 'Igor_Trefilov_CV.pdf',
+  console.log('Generating PDFs...');
+  const pdfOptions = {
     format: 'A4',
     printBackground: true,
     scale: 1.0,
@@ -29,10 +28,13 @@ const generatePDF = async () => {
       bottom: '0px',
       left: '0px'
     }
-  });
+  };
+
+  await page.pdf({ ...pdfOptions, path: 'Igor_Trefilov_CV.pdf' });
+  await page.pdf({ ...pdfOptions, path: 'Igor_Trefilov_Staff_Product_Engineer_Vitally_CV.pdf' });
   
   await browser.close();
-  console.log('✅ PDF generated: Igor_Trefilov_CV.pdf');
+  console.log('✅ PDFs generated: Igor_Trefilov_CV.pdf & Igor_Trefilov_Staff_Product_Engineer_Vitally_CV.pdf');
 };
 
 generatePDF().catch(console.error);
